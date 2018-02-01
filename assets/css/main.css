@@ -1,0 +1,59 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  position: relative;
+}
+.wrapper {
+  margin-bottom: 120px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.section-headder {
+    padding: 60px 0 10px;
+}
+
+.list-inline {
+  display: inline;
+}
+
+.site-title h1 {
+  font-size: 4em;
+}
+
+#contact-list {
+  font-size:2em;
+  text-align: center;
+}
+td.PASSED {
+    background-color: green;
+    color: white;
+}
+td.FAILED {
+    background-color: red;
+    color: white;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+/*    padding-top: 60px; */
+}
+
+#definitions h2 {
+    padding-top: 60px;
+}
+
+.nav-item a {
+    padding: 0 10px;
+    color: #fff;
+}
+
+@media (max-width: 968px) {
+      .pull-right, .pull-left {
+              text-align: center;
+       } 
+    }

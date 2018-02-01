@@ -1,0 +1,28 @@
+<h2>List of Available Servers</h2>
+
+<table class='table' style='width:100%'>
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Registration Method</th>
+            <th>Website Language</th>
+            <th><a href='https://xmpp.org/extensions/xep-0375.html'>XEP-0375</a> complient</th>
+            <th><a href='https://xmpp.org/extensions/xep-0368.html'>XEP-0368</a> complient</th>
+            <th>Tor Service</th>
+            <th>Price</th>
+        </tr>
+   </thead>
+   <tbody>
+{% for service in site.data.clients-compliance %}
+        <tr>
+            <td style="min-width:150px;"><a href='{{ service.url }}'>{{ service.name }}</a></td>
+            <td style="min-width:150px;">{% if service.registration-url %}<a href="{{ service.registration-url }}">{{ service.registration }}</a>{% elsif service.registration %}{{ service.registration}}{% else %}<i>Unknown</i>{% endif %}</td>
+            <td>{{ service.language }}</td>
+            {% if service.xep-375 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
+            {% if service.xep-368 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
+            {% if service.tor %}<td class=PASSED><center>{{ service.tor }}</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
+            <td><center>{% if service.price %}{{ service.price }}{% else %}Free{% endif %}<center></td>
+        </tr>
+{%  endfor %}
+    </tbody>
+</table>

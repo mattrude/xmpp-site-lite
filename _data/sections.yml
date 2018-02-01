@@ -1,0 +1,16 @@
+- name: Archiving/Storage
+  slug: history
+  glyph: fa fa-floppy-o
+  color: 9FCF6C
+  col: 3
+
+- name: File Sharing
+  slug: file
+  glyph: fa fa-cloud-download
+  col: 2
+
+- name: Mobile
+  slug: mobile
+  glyph: fa fa-mobile
+  color: E66E20
+  col: 3

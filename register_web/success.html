@@ -1,0 +1,67 @@
+---
+layout: default
+title: Account Registration succeeded!
+sitemap: false
+permalink: /files/register_web/success.html
+---
+
+    <div id="loginbox" style="margin-top:50px;" class="mainbox">
+        <div class="panel panel-success">
+            <div class="panel-heading"><h1>Registration Succeeded!</h1></div>
+                <div class="panel-body">
+                    <p><strong>Your new JID is <code>{jid}</code>.</strong></p>
+                    <div class="row">
+                        <div id="register-text" class="col-md-7">
+                            <div class="row">
+                                <p>This page allows you to create a new XMPP/Jabber account in this server for the domain {hostname}.  Your new JID will be created in the form
+                                <code>username@{hostname}</code>.</p>
+                                <div class="alert alert-warning" style="margin:0 auto;" role="alert">
+                                    Please read the sites <a href="{{ site.url }}/privacy-policy/" title="Privacy Policy">privacy policy</a>
+                                    before registering a new account.
+                                </div>
+                                <div class="client-mobile">
+                                        <h3>Clients</h3>
+                                        <p>After creating an account, you must use a software client to login into the server.
+                                            Below is a small list of clients you may use, but really any XMPP client can work.</p>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <center><a href="https://conversations.im/" title="Conversations User Guide" target=”_blank”>
+                                                    <img src="{{ site.url }}/assets/img/clients/conversations_logo.png" height="80px" width="80px"></a></center>
+                                                <center><h4>Conversations</h4></center>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <center><a href="https://swift.im/" title="Swift User Guide" target=”_blank”>
+                                                    <img src="{{ site.url }}/assets/img/clients/swift_logo.svg" height="80px" width="80px"></a></center>
+                                                <center><h4>Swift</h4></center>
+                                            </div>
+                        <div class="col-md-3">
+                            <center><a href="https://chatsecure.org/" title="Chatsecure User Guide" target=”_blank”>
+                                <img src="{{ site.url }}/assets/img/clients/chatsecure_logo.png" height="80px" width="80px"></a></center>
+                            <center><h4>ChatSecure</h4></center>
+                        </div>
+                        <div class="col-md-3">
+                            <center><a href="https://gajim.org/" title="Gajim User Guide" target=”_blank”>
+                                <img src="{{ site.url }}/assets/img/clients/gajim_logo.png" height="80px" width="80px"></a></center>
+                            <center><h4>Gajim</h4></center>
+                        </div>
+<hr style="color:grey">
+                                        <p>Once you have logged into the server, you may then chat with users on nearly any XMPP server.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-6">
+                <h2>Connecting...</h2>
+                <ul>
+                    <li>JID: <b>{jid}</b></li>
+                    <li>Port: <b>5222</b></li>
+                    <li>Domain: <b>{{ site.xmpp-url }}</b></li>
+                    <li>Server Name: <b>{{ site.xmpp-host }}</b></li>{% if site.xmpp-conference-url and site.xep-0045 == 1 %}
+                    <li>Rooms: <b>{{ site.xmpp-conference-url }}</b></li>{% endif %}{% if site.xmpp-proxy-url and site.xep-0065 == 1 %}
+                    <li>Socks 5 Proxy: <b>{{ site.xmpp-proxy-url }}</b></li>{% endif %}{% if site.xmpp-upload-url and site.xep-0363 == 1 %}
+                    <li>File Uploads: <b>{{ site.xmpp-upload-url }}</b></li>{% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

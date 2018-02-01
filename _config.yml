@@ -1,0 +1,76 @@
+# Site settings
+title: soderparr.com Communication Service
+email: matt@mattrude.com
+description: ""
+url: "https://im.soderparr.com"
+name: "soderparr.com"
+baseurl: "soderparr.com"
+destination: "/var/www/im.soderparr.com"
+prosody-version: "0.10"
+register-web: 1
+
+owner_name: "Matt Rude"
+owner_pgpkey: "0xc4909ee495b0761f"
+
+xmpp-url: "soderparr.com"  # The domain name of the XMPP service
+xmpp-host: "im.soderparr.com"
+xmpp-conference-url: "conference.soderparr.com" # The domain name of the conference XMPP service
+xmpp-proxy-url: "proxy.soderparr.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
+xmpp-upload-url: "upload.soderparr.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
+
+xep-0030: 1 # Service Discovery
+xep-0045: 1 # Multi-User Chat
+xep-0065: 1 # SOCKS 5 Bytestreams (Proxy)
+xep-0115: 1 # Entity Capabilities
+xep-0163: 1 # Personal Eventing Protocal
+xep-0191: 1 # Blocking Command
+xep-0198: 1 # Stream Management
+xep-0237: 1 # Roster Versioning
+xep-0280: 1 # Message Carbons
+xep-0313: 1 # Message Archive Management
+xep-0352: 1 # Client State Indication
+xep-0357: 1 # Push Notifications
+xep-0363: 1 # HTTP File Upload
+xep-0368: 1 # SRV records for XMPP over TLS
+xep-0384: 1 # OMEMO Encryption
+xep-0387: 1 # XMPP Compliance Suites 2017
+
+fingerprints: 1
+fingerprint-expires: "Apr 30 00:01:14 2018 GMT"
+fingerprint-conference-expires: "Mar 11 07:10:22 2018 GMT"
+fingerprint-proxy-expires: "Mar 11 07:10:22 2018 GMT"
+fingerprint-proxy-expires: "Mar 11 07:10:22 2018 GMT"
+fingerprint-sha1: "5E:F9:B5:77:C3:26:3F:E5:A7:D0:33:65:EC:DC:7E:D2:20:26:1B:D4"
+fingerprint-sha256: "8F:7D:29:8D:95:A7:87:32:49:13:CB:9C:38:46:6D:7A:AD:D0:B3:DD:78:A2:38:72:52:AE:75:7C:81:31:44:EF"
+fingerprint-conference-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
+fingerprint-conference-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
+fingerprint-proxy-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
+fingerprint-proxy-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
+fingerprint-proxy-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
+fingerprint-proxy-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
+
+# Analytics settings
+#google_analytics_id: UA-9532791-9
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+highlighter: rouge
+date: YYYY-MM-DD HH:MM
+
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- CONTRIBUTING.md
+- LICENSE
+- css/syntax.less
+- css/site.less
+- css/small.less
+
+plugins:
+- jekyll-sitemap
+- jekyll-minifier
+
+jekyll-minifier:
+  exclude: 'robots.txt, contact.txt, contact-ecc.txt'

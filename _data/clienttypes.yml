@@ -1,0 +1,8 @@
+- name: Mobile
+  slug: mobile
+
+- name: Destop/Laptop
+  slug: desktop
+
+#- name: Server
+#  slug: server

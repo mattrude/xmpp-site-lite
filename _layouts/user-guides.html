@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% include header.html %}
+{% include menu.html %}
+<div class="container offsetanchor" style="padding-top:80px;">
+<center><img src="/assets/img/clients/{{ page.client}}_logo.png" alt="{{ page.client | capitalize }} XMPP Client Logo" height="128px" width="128px"><h1>{{ page.client | capitalize }} User Guide</h1></center>
+
+<!--
+<div class="col-md-4 pull-right float-right">
+    <center><img src="/assets/img/clients/{{ page.client}}_logo.png" alt="{{ page.client | capitalize }} XMPP Client Logo" height="80px" width="80px"><h1></center>
+    <center><h3>{{ page.client | capitalize }}</h3></center>
+</div>
+-->
+
+{{ content }}
+{% include footer.html %}

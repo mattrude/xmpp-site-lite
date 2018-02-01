@@ -1,0 +1,47 @@
+- name: Offline Storage
+  section: history
+  text: Offline Storage allows for the storage of offline messages to disk, ready to be delivered to users when the next log in.  This is implement using <a href="http://xmpp.org/extensions/xep-0160.html">XEP-0160</a>, <a href="http://xmpp.org/extensions/xep-0203.html">XEP-0203</a> and <a href="http://xmpp.org/extensions/xep-0091.html">XEP-0091</a> for backwards compatibility with older clients.
+
+- name: Message Archive Management
+  section: history
+  text: It is a common desire for users of XMPP to want to store their messages in a central archive on their server. This feature allows them to record conversations that take place on clients that do not support local history storage, to synchronise conversation history seamlessly between multiple clients, to read the history of a MUC room, or to view old items in a pubsub node.
+
+- name: Message Carbons
+  section: history
+  text: Message Carbons allow users to maintain a shared and synchronized view of all conversations across all their online clients and devices.
+
+- name: vCards
+  section: history
+  text: vCards are a online version of a business card, as implemented in <a href="http://xmpp.org/extensions/xep-0054.html">XEP-0054</a>. Users are not required to fill in a vCard and can supply as much or as little as they like.
+
+- name: Rosters
+  section: history
+  text: The roster allows users to keep and manage a contact list or addressbook.  Any modifications made by a user to their roster is shared between all clients but some clients may need to log out and back in or manually request the updated roster before the changes are displayed.
+
+- name: Personal Eventing Protocal
+  section: history
+  text: Often users will want to publish details about their mood, the music they are listening to or the activity they are currently taking part in. <b>Personal Eventing Protocal</b> will allow users to publish that information and have interested parties receive it.
+
+- name: HTTP File Upload
+  section: file
+  text: HTTP File Upload (<a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a>) allows a user to upload a file to the server, the server will then provide a URL link back to that file that anyone may view.</p><p>The max file upload site is currenly <b>5 MBytes</b>.</p><p>The upload services URL is <code class="highlighter-rouge">upload.mattrude.com</code>, the fingerprints are listed on the <a href="/certificates/">certificates</a> page.
+
+- name: File Transfer
+  section: file
+  text: File Transfer (<a href="https://xmpp.org/extensions/xep-0065.html">XEP-0065</a>) allows the server to proxy file transfers between 2 clients that are behind NAT routers or firewalls, and otherwise wouldn’t be able to transfer files.</p><p>The proxy services URL is <code class="highlighter-rouge">proxy.mattrude.com</code>, the fingerprints are listed on the <a href="/certificates/">certificates</a> page.
+
+- name: Web Presence
+  section: file
+  text: Web Presence provides the status of a user via a image URL.  Please see the page <a href="/help/web-presence/">Web Presence</a> for more infromation on how to use the web presence service.
+
+- name: Compression
+  section: mobile
+  text: While the bandwidth usage of XMPP isn’t great, compressing the data sent to/from your server can give significant benefits to those on slow connections, such as dial-up or mobile networks.</p><p>Compression is enabled via <a href="https://prosody.im/doc/modules/mod_compression">mod_compression</a> that implements <a href="http://xmpp.org/extensions/xep-0138.html">XEP-0138</a>, and supports the zlib compression algorithm.
+
+- name: Push Notifications
+  section: mobile
+  text: The purpose of push notifications (<a href="https://xmpp.org/extensions/xep-0357.html">XEP-0357</a>) is to inform users of new messages or other pertinent information even when they have no XMPP clients online.</p><p>Typically, these notifications are delivered to a user’s mobile device, displaying a notice that can trigger opening an XMPP client to continue a conversation or answer a Jingle session request.
+
+- name: Client State Indication
+  section: mobile
+  text: Client State Indication or CSI (<a href="https://xmpp.org/extensions/xep-0352.html">XEP-0352</a>) is a way for mobile clients to tell the server that they are sitting in someones pocket and would rather not get some less urgent things pushed to it.

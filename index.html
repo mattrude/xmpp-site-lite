@@ -1,0 +1,126 @@
+---
+layout: welcome
+title: Home
+permalink: /
+---
+
+
+<div class="jumbotron" style="padding-top:90px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <img src="{{ site.url }}/assets/img/xmpp_logo.png" width="233px;" height="240px;">
+            </div>
+            <div class="col-md-8 site-title" style="text-align:right;">
+                <h1>XMPP Communication Service</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container offsetanchor" id="opening">
+    <div class="row">
+        <div class="col-md-7 col-sm-6">
+            <p>This is the <strong>{{ site.name }}</strong> communication service website.  This site is here to provide basic
+            information on using this service.  A <a href="{{ site.url }}/help/definitions/#xmpp-server">XMPP</a>
+            service provides messaging ability via a local client.  XMPP sites like this service are
+            <a href="{{ site.url }}/help/definitions/#federation">federated</a>, meaning they are able to connect
+            to diffrent XMPP servers on diffrent domains, similer to how email allows you to send messages to users on other
+            domains/servers.  This service is in complete compliance with
+            <a href="https://xmpp.org/extensions/xep-0375.html">XEP-0375</a>. The XEP-0375 document specifies the 2016
+            compliance levels for XMPP clients and servers.</p>
+
+            <p>This service requires the use of a client to connect to the server with.  Please see the
+            <a href="{{ site.url }}/help/clients/">client list</a> for a small list of available clients that
+            may be used.  My personal preferred clients are <a href="https://gajim.org/">Gajim</a> or
+            <a href="https://swift.im/">Swift</a> for desktop/laptops and <a href="https://conversations.im/">Conversations</a>
+            or <a href="https://chatsecure.org/">ChatSecure</a> for mobile.</p>
+        </div>
+
+        <div class="col-md-5 col-sm-6" style="margin:auto;">
+            <h1>Connecting...</h1>
+            <ul>
+                <li>Port: <b>5222</b></li>
+                <li>Domain: <b>{{ site.xmpp-url }}</b></li>
+                <li>Server Name: <b>{{ site.xmpp-host }}</b></li>{% if site.xmpp-conference-url and site.xep-0045 == 1 %}
+                <li>Rooms: <b>{{ site.xmpp-conference-url }}</b></li>{% endif %}{% if site.xmpp-proxy-url and site.xep-0065 == 1 %}
+                <li>Socks 5 Proxy: <b>{{ site.xmpp-proxy-url }}</b></li>{% endif %}{% if site.xmpp-upload-url and site.xep-0363 == 1 %}
+                <li>File Uploads: <b>{{ site.xmpp-upload-url }}</b></li>{% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% if site.register-web == 2 %}
+<div id="register">
+    <div id="feature-register" style="background-color:#eee;padding:60px 0;">
+        <div id="feature-register" class="container offsetanchor">
+            {% include registration.html %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+    {% for section in site.data.sections %}
+<div id="{{ section.slug }}">
+    <div id="feature-{{ section.slug }}" style="background-color:#{{ section.color }};">
+        <div class="container offsetanchor">
+                <div class="section-headder" id="{{ section.slug }}"><center>
+                    <span class="{{ section.glyph }}" style="font-size:100px;" aria-hidden="true"></span>
+                    <h2>{{ section.name }}</h2>
+                </center></div>
+            <div class="row">
+                <div class="feature-{{ section.slug }}">
+                    <div class="row">
+                        {% for feature in site.data.features %}
+                        {% if feature.section == section.slug %}
+                        <div class="col-md-4 col-sm-6" style="min-height:280px;">
+                            <h3>{{ feature.name }}</h3>
+                            <p>{{ feature.text }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+
+
+<div id="about">
+    <div id="feature-about" style="background-color:#eee;">
+         {% include about.html %}
+    </div>
+</div>
+
+
+<div class="container offsetanchor" id="security">
+        <div class="section-headder" id="{{ section.slug }}"><center>
+            <i class="fa fa-lock" style="font-size:60px;" aria-hidden="true"></i>
+            <h2>Privacy & Security</h2>
+        </center></div>
+    <div class="row">
+        <div class="col-md-6" style="min-height:280px;">
+            <h2>Security</h2>
+            <ul>
+                <li>SSL/TLS encryption is <a href="https://github.com/stpeter/manifesto/blob/master/manifesto.txt">required</a>
+                    between clients and servers (C2S) and server to server (S2S) connections</li>
+                <li>The backend is configured to store hashed and salted authentication data</li>
+                <li>Use <a href="https://conversations.im/omemo/">OMEMO</a> or
+                    <a href="{{ site.url }}/help/definitions/#otr">Off-the-Record (OTR)</a>
+                    in your chat client to have fully encrypted chats</li>
+            </ul>
+        </div>
+        <div class="col-md-6" style="min-height:280px;">
+            <h2 id="policies">Policies</h2>
+            <p>No more information is collected and stored than what is absolutely necessary.
+            This includes rosters, vCards, offline messages, etc.</p>
+            <p>Spam and abuse including advertisements of any kind will not be tolerated on
+            this network. For spam or abuse please contact us with the full details.</p>
+            <p>Please see the <a href="{{ site.url }}/privacy-policy/">Privacy Policy</a> for
+            a more detailed explanation.</p>
+        </div>
+    </div>
+</div>

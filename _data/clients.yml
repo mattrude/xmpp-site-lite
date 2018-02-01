@@ -1,0 +1,80 @@
+- name: Conversations
+  type: mobile
+  platform: Mobile (Android)
+  encryption: TLS, OMEMO, OTR
+  domain: conversations.im
+  url: https://conversations.im/
+  img: conversations_logo.png
+  text: Conversations is a Jabber/XMPP client for Android 4.0+ smartphones that has been optimized to provide a unique mobile experience.
+
+- name: ChatSecure
+  type: mobile
+  platform: Mobile (iOS)
+  encryption: TLS, OMEMO, OTR
+  domain: chatsecure.org
+  url: https://chatsecure.org/
+  img: chatsecure_logo.png
+  text: ChatSecure is a free and open source messaging app that features OTR encryption over XMPP. 
+
+- name: Xabber
+  type: mobile
+  platform: Mobile (Android)
+  encryption: TLS, OTR
+  domain: xabber.com
+  url: https://www.xabber.com/
+  img: xabber_logo.png
+  text: Xabber is the most popular open-source XMPP client for Android. It supports multiple XEPs, Off-The-Record (OTR) chat encryption and is available in multiple languages.
+
+- name: Gajim
+  type: desktop
+  platform: Linux / Windows
+  encryption: TLS, OMEMO, OTR
+  domain: gajim.org
+  url: https://gajim.org/
+  img: gajim_logo.png
+  text: Gajim is to provide a full featured and easy to use Jabber/XMPP client. Gajim works nicely with GNOME, but does not require it to run. It is released under the GNU General Public License.
+
+- name: Swift
+  type: desktop
+  platform: Linux / OSX / Windows
+  encryption: TLS
+  domain: swift.im
+  url: http://swift.im/
+  img: swift_logo.svg
+  guide: spark
+  text: An elegant, secure, adaptable and intuitive XMPP Client. Available for free on Windows, Mac OSX and Linux.
+
+- name: Psi
+  type: desktop
+  platform: Linux / OSX / Windows
+  encryption: TLS
+  domain: psi-im.org
+  url: http://psi-im.org/
+  img: psi_logo.png
+  text: Psi is a free instant messaging application designed for the XMPP network. Fast and lightweight, Psi is fully open-source and compatible with Windows, Linux, and Mac OS X.
+
+- name: Messages
+  type: desktop
+  platform: OSX
+  encryption: TLS
+  domain: apple.com
+  url: http://www.apple.com/osx/whats-new/features.html#messages
+  img: messages_logo.png
+  text: Messages is an instant messaging software application developed by Apple Inc. for its macOS.
+
+- name: Spark
+  type: desktop
+  platform: Linux / OSX / Windows
+  encryption: TLS, OTR
+  domain: igniterealtime.org
+  url: http://igniterealtime.org/projects/spark/index.jsp
+  img: spark_logo.png
+  text: Spark is an Open Source, cross-platform IM client optimized for businesses and organizations. It features built-in support for group chat, telephony integration, and strong security. It also offers a great end-user experience with features like in-line spell checking, group chat room bookmarks, and tabbed conversations.
+
+#- name: Profanity
+#  type: server
+#  platform: 	Console / Text-Mode
+#  encryption: TLS, OTR
+#  domain: profanity.im
+#  url: http://profanity.im/
+#  text: Profanity is a console based XMPP client written in C using ncurses and libstrophe, inspired by Irssi
