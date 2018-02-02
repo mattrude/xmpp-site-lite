@@ -1,0 +1,105 @@
+---
+layout: default
+title: Creating a New Account
+permalink: /creating-a-new-account/
+---
+
+<div class="container">
+  <div class="row justify-content">
+
+    <div class="col-3">
+        <nav id="navbar-main" class="sticky-top navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#download">Download a Client</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
+                    <a class="nav-link ml-3 my-1" href="#desktop">Desktop</a>
+                </nav>
+                <a class="nav-link" href="#register">Register an Account</a>
+                <a class="nav-link" href="#item-3">Item3</a>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                    <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+                </nav>
+            </nav>
+        </nav>
+    </div>
+
+    <div class="col-9">
+        <div id="download" class="section-headder">
+            <center><h1>Step 1: Download a Client</h1></center>
+        </div>
+
+        {% for type in site.data.clienttypes %}
+        <div id="{{ type.slug }}">
+            <center><h2 style="padding:60px 0;font-size:3em;">{{ type.name }}</h2></center>
+            <div class="client-{{ type.slug }}">
+                <div class="row">
+                    {% for client in site.data.clients %}
+                    {% if client.type == type.slug %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            {% if client.img %}
+                            <img class="card-img-top" src="{{ site.url }}/assets/img/clients/{{ client.img }}"/>
+                            {% endif %}
+                            <div class="card-body">
+                                <h3 class="card-title">{{ client.name }}</h3>
+                                <ul class="list-group-flush card-text" style="padding-left:unset;">
+                                    <li class="list-group-item"><b>Platform:</b> {{ client.platform }}</li>
+                                    <li class="list-group-item"><b>Encryption:</b> {{ client.encryption }}</li>
+                                    <li class="list-group-item"><b>Website:</b> <a href="{{ client.url }}">{{ client.domain }}</a></li>
+                                    {% if client.text %}<li class="list-group-item">{{ client.text }}</li>{% endif %}
+                                </ul>
+                            </div><!-- end class card-body -->
+                        </div><!-- end class card -->
+                    </div><!-- end class col-md-4 -->
+                    {% endif %}
+                    {% endfor %}
+                </div><!-- end class row -->
+            </div><!-- end class client-{{ type.slug }} -->
+        </div>
+        {% endfor %}
+
+
+<div id="register" class="section-headder">
+  <center><h1>Step 2: Choose a XMPP Server and Register an Account</h1></center>
+</div>
+
+
+<table class='table' style='width:100%'>
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Registration Method</th>
+            <th><center>Website<br />Language</center></th>
+            <th><center>Service<br />Price</center></th>
+            <th><a href='https://xmpp.org/extensions/xep-0375.html'>XEP-0375</a> complient</th>
+            <th><a href='https://xmpp.org/extensions/xep-0368.html'>XEP-0368</a> complient</th>
+        </tr>
+   </thead>
+   <tbody>
+{% for service in site.data.clients-compliance %}
+        <tr>
+            <td style="min-width:150px;"><a href='{{ service.url }}'>{{ service.name }}</a></td>
+            <td style="min-width:100px;">{% if service.registration-url %}<a href="{{ service.registration-url }}">{{ service.registration }}</a>{% elsif service.registration %}{{ service.registration}}{% else %}<i>Unknown</i>{% endif %}</td>
+            <td><center>{{ service.language }}</center></td>
+            <td><center>{% if service.price %}{{ service.price }}{% else %}Free{% endif %}<center></td>
+            {% if service.xep-375 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
+            {% if service.xep-368 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
+        </tr>
+{%  endfor %}
+    </tbody>
+</table>
+
+
+
+<div class="section-headder">
+  <center><h1>Step 3: Connect your Client to you New Account</h1></center>
+</div>
+
+
+</div>
+</div>
+
+
