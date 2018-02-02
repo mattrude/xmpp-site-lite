@@ -1,215 +1,76 @@
 ---
 layout: default
 title: Creating a New Account
-permalink: /creating-a-new-account/
+permalink: /new-user-guide/
 ---
 
 <div id="creating-account" class="container">
-  <div class="row justify-content">
+    <div class="row justify-content">
 
-<div class="jumbotron">
-  <h1 class="display-4">New User Guide</h1>
-  <p class="lead">This page is here to help a new user, register an account, download the needed software, and log into the server.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead float-xs-right">
-    <a class="btn btn-primary btn-lg" href="#download" role="button">Get Started</a>
-  </p>
-</div>
+        <!-- Starting the Top Jubotron of the page -->
+        <div class="jumbotron">
+            <h1 class="display-4">New User Guide</h1>
+            <p class="lead">This page is here to help a new user, register an account, download the needed software, and log into the server.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead float-xs-right">
+                <a class="btn btn-primary btn-lg" href="#download" role="button">Get Started</a>
+            </p>
+        </div>
+        <!-- Ending the Top Jubotron of the page -->
 
-    <div class="col-3" style="padding-left:0;">
-        <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;padding-left:0;margin-top:-80px;">
-            <a class="navbar-brand" href="#">Index</a>
-            <nav id="nav-body" class="nav nav-pills flex-column bg-light">
-                <a class="nav-link" href="#overview">Overview</a>
-                <a class="nav-link" href="#download">Download a Client</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
-                    <a class="nav-link ml-3 my-1" href="#desktop">Desktop</a>
-                </nav>
-                <a class="nav-link" href="#register">Register an Account</a>
-                <a class="nav-link" href="#connect">Connect your Account</a>
-                <nav class="nav nav-pills flex-column">
-                    <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
-                    <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+        <!-- Starting the page index nav menu -->
+        <div class="col-3" style="padding-left:0;">
+            <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;padding-left:0;margin-top:-80px;">
+                <a class="navbar-brand" href="#">Index</a>
+                <nav id="nav-body" class="nav nav-pills flex-column bg-light">
+                    <a class="nav-link" href="#overview">Overview</a>
+                    <a class="nav-link" href="#download">Download a Client</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
+                        <a class="nav-link ml-3 my-1" href="#desktop">Desktop</a>
+                    </nav>
+                    <a class="nav-link" href="#register">Register an Account</a>
+                    <a class="nav-link" href="#connect">Connect your Account</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
+                        <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
+                    </nav>
                 </nav>
             </nav>
-        </nav>
-    </div>
-
-    <div class="col-9">
-
-        <!-- This is the Overview Section -->
-
-        <div id="overview" class="section-headder">
-            <center><h1>Overview</h1></center>
         </div>
+        <!-- Ending the page index nav menu -->
 
-        <p>It may look like there are a bunch of steps to get all setup, but it is really pretty easy and quick to do.</p>
-
-        <p></p>
-
-        <!-- This is the Download a Client Section -->
-
-        <div id="download" class="section-headder">
-            <center><h1>Step 1: Download a Client</h1></center>
+        <!-- Starting the content section of the page -->
+        <div class="col-9">
+            <!-- This is the Overview Section -->
+            <div id="overview" class="section-headder">
+                <center><h1>Overview</h1></center>
+            </div>
+            
+            <p>It may look like there are a bunch of steps to get all setup, but it is really pretty easy and quick to do.</p>
+            
+            <p></p>
+            
+            <!-- This is the Download a Client Section -->
+            <div id="download" class="section-headder">
+                <center><h1>Step 1: Download a Client</h1></center>
+            </div>
+            
+            {% include guide-download.html %}
+            
+            <!-- This is the Register an Account Section -->
+            <div id="register" class="section-headder">
+                <center><h1>Step 2: Choose a XMPP Server and Register an Account</h1></center>
+            </div>
+            
+            {% include guide-register.html %}
+            
+            <!-- This is the Connect your Client Section -->
+            <div id="connect" class="section-headder">
+                <center><h1>Step 3: Connect your Client to you New Account</h1></center>
+            </div>
         </div>
-
-        {% for type in site.data.clienttypes %}
-        <div id="{{ type.slug }}">
-            <center><h2 style="padding:60px 0;font-size:3em;">{{ type.name }}</h2></center>
-            <div class="client-{{ type.slug }}">
-                <div class="row">
-                    {% for client in site.data.clients %}
-                    {% if client.type == type.slug %}
-                    <div class="col-md-6">
-                        <div class="card">
-                            {% if client.img %}
-                            <img class="card-img-top" src="{{ site.url }}/assets/img/clients/{{ client.img }}"/>
-                            {% endif %}
-                            <div class="card-body">
-                                <h3 class="card-title">{{ client.name }}</h3>
-                                <ul class="list-group-flush card-text" style="padding-left:unset;">
-                                    <li class="list-group-item"><b>Platform:</b> {{ client.platform }}</li>
-                                    <li class="list-group-item"><b>Encryption:</b> {{ client.encryption }}</li>
-                                    <li class="list-group-item"><b>Website:</b> <a href="{{ client.url }}">{{ client.domain }}</a></li>
-                                    {% if client.text %}<li class="list-group-item">{{ client.text }}</li>{% endif %}
-                                </ul>
-                            </div><!-- end class card-body -->
-                        </div><!-- end class card -->
-                    </div><!-- end class col-md-4 -->
-                    {% endif %}
-                    {% endfor %}
-                </div><!-- end class row -->
-            </div><!-- end class client-{{ type.slug }} -->
-        </div>
-        {% endfor %}
-
-
-<div id="register" class="section-headder">
-  <center><h1>Step 2: Choose a XMPP Server and Register an Account</h1></center>
-</div>
-
-
-<div id="accordion">
-
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Register an Account on This Server
-        </button>
-      </h5>
-    </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-                <div class="row">
-                    <div class="card" style="border-color:#9FCF6C;margin-left:25px;">
-                        <div class="panel-heading" style="background-color:#9FCF6C;border-color:transparent;color:rgb(52, 68, 35);">
-                            <div class="panel-title"><center><h4>Registration Form</h4></center></div>
-                        </div>
-                        <div class="panel-body" style="margin-bottom: 15px;">
-                            <form action="{{ site.url }}/register/" method="post" class="form-horizontal needs-validation" style="padding: 15px;" novalidate>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="username" placeholder="Username" id="username" required />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" style="font-size:0.8em;font-weight:bold;">@{hostname}</span>
-                                        </div>
-                                        <div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" id="password" required />
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" id="confirm-password" required />
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" name="email" placeholder="E-Mail" id="email" required />
-                                        <div class="invalid-feedback" style="width: 100%;">Your email address is required.</div>
-                                    </div>
-                                </div>
-                                <div style="margin-bottom:25px;margin:0 auto;" class="input-group test">
-                                    {captcha}
-                                </div>
-                                <div style="margin-top:15px;margin-bottom:0;" class="form-group">
-                                    <div class="col-sm-12 controls">
-                                        <input type="submit" value="Register" class="btn btn-success pull-right" />
-                                        <input type="reset" value="Clear" class="btn btn-default pull-right" style="margin-right:15px" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Register an Account on Another Server 
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-
-
-<table class='table' style='width:100%'>
-    <thead>
-        <tr>
-            <th>Service Name</th>
-            <th>Registration Method</th>
-            <th><center>Website<br />Language</center></th>
-            <th><center>Service<br />Price</center></th>
-            <th><a href='https://xmpp.org/extensions/xep-0375.html'>XEP-0375</a> complient</th>
-            <th><a href='https://xmpp.org/extensions/xep-0368.html'>XEP-0368</a> complient</th>
-        </tr>
-   </thead>
-   <tbody>
-{% for service in site.data.clients-compliance %}
-        <tr>
-            <td style="min-width:150px;"><a href='{{ service.url }}'>{{ service.name }}</a></td>
-            <td style="min-width:100px;">{% if service.registration-url %}<a href="{{ service.registration-url }}">{{ service.registration }}</a>{% elsif service.registration %}{{ service.registration}}{% else %}<i>Unknown</i>{% endif %}</td>
-            <td><center>{{ service.language }}</center></td>
-            <td><center>{% if service.price %}{{ service.price }}{% else %}Free{% endif %}<center></td>
-            {% if service.xep-375 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
-            {% if service.xep-368 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
-        </tr>
-{%  endfor %}
-    </tbody>
-</table>
-
-
-
-      </div>
-    </div>
-  </div>
-
-
-<div id="connect" class="section-headder">
-  <center><h1>Step 3: Connect your Client to you New Account</h1></center>
-</div>
-
-
-</div>
-</div>
-
-
+        <!-- Ending the content section of the page -->
+    </div> <!-- Closing the row justify-content clases -->
+</div> <!-- Closing the ID creating-account and the main container class
