@@ -66,12 +66,20 @@ td.FAILED {
     color: #fff;
 }
 
+@media (max-width: 990px) {
+  .contact-list {
+      font-size: 1.7em;
+  }
+  .client-mobile h4 {
+      font-size: 1.3rem;
+  }
+}
+
 @media (max-width: 768px) {
-      .pull-right, .pull-left {
-           text-align: center;
-       } 
-       .site-title {
-           display: none;
-       }
-  
-    }
+  .pull-right, .pull-left {
+      text-align: center;
+  } 
+  .site-title {
+      display: none;
+  }
+}
