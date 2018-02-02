@@ -2,18 +2,22 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   position: relative;
 }
+
 .wrapper {
   margin-bottom: 120px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: #f5f5f5;
 }
+
 .index-section {
   padding: 100px 0 40px;
 }
@@ -36,6 +40,15 @@ body {
 
 .feature-section {
   padding-bottom: 40px;
+}
+
+.card {
+  min-height: 600px;
+  margin-bottom: 25px;
+}
+.card-img-top {
+  width: 100px;
+  margin: 30px auto 0;
 }
 
 .contact-list {
@@ -71,7 +84,7 @@ td.FAILED {
       font-size: 1.7em;
   }
   .client-mobile h4 {
-      font-size: 1.3rem;
+      font-size: 1rem;
   }
 }
 
@@ -81,5 +94,14 @@ td.FAILED {
   } 
   .site-title {
       display: none;
+  }
+  .client-mobile h4 {
+      font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+      max-width: 960px;
   }
 }
