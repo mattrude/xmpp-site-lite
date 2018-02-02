@@ -8,16 +8,16 @@ permalink: /creating-a-new-account/
   <div class="row justify-content">
 
     <div class="col-3">
-        <nav id="navbar-main" class="sticky-top navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <nav class="nav nav-pills flex-column">
+        <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;margin-top:-80px;">
+            <a class="navbar-brand" href="#">Index</a>
+            <nav class="nav nav-pills flex-column bg-light">
                 <a class="nav-link" href="#download">Download a Client</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
                     <a class="nav-link ml-3 my-1" href="#desktop">Desktop</a>
                 </nav>
                 <a class="nav-link" href="#register">Register an Account</a>
-                <a class="nav-link" href="#item-3">Item3</a>
+                <a class="nav-link" href="#connect">Connect your Account</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>
                     <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>
@@ -38,7 +38,7 @@ permalink: /creating-a-new-account/
                 <div class="row">
                     {% for client in site.data.clients %}
                     {% if client.type == type.slug %}
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="card">
                             {% if client.img %}
                             <img class="card-img-top" src="{{ site.url }}/assets/img/clients/{{ client.img }}"/>
@@ -94,7 +94,7 @@ permalink: /creating-a-new-account/
 
 
 
-<div class="section-headder">
+<div id="connect" class="section-headder">
   <center><h1>Step 3: Connect your Client to you New Account</h1></center>
 </div>
 
