@@ -6,12 +6,12 @@ permalink: /
 
 
 <div class="jumbotron" style="padding-top:90px;">
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-4">
                 <img src="{{ site.url }}/assets/img/xmpp_logo.png" width="233px;" height="240px;">
             </div>
-            <div class="col-md-8 site-title" style="text-align:right;">
+            <div class="col-md-8 float-md-right site-title">
                 <h1>XMPP Communication Service</h1>
             </div>
         </div>
@@ -20,7 +20,7 @@ permalink: /
 
 <div class="container offsetanchor" id="opening">
     <div class="row">
-        <div class="col-md-7 col-sm-6">
+        <div class="col-md-7">
             <p>This is the <strong>{{ site.name }}</strong> communication service website.  This site is here to provide basic
             information on using this service.  A <a href="{{ site.url }}/help/definitions/#xmpp-server">XMPP</a>
             service provides messaging ability via a local client.  XMPP sites like this service are
@@ -37,7 +37,7 @@ permalink: /
             or <a href="https://chatsecure.org/">ChatSecure</a> for mobile.</p>
         </div>
 
-        <div class="col-md-5 col-sm-6" style="margin:auto;">
+        <div class="col-md-5" style="margin:auto;">
             <h1>Connecting...</h1>
             <ul>
                 <li>Port: <b>5222</b></li>
@@ -53,7 +53,7 @@ permalink: /
 </div>
 
 {% if site.register-web == 2 %}
-<div id="register">
+<div id="register" class="index-section">
     <div id="feature-register" style="background-color:#eee;padding:60px 0;">
         <div id="feature-register" class="container offsetanchor">
             {% include registration.html %}
@@ -63,10 +63,9 @@ permalink: /
 {% endif %}
 
     {% for section in site.data.sections %}
-<div id="{{ section.slug }}">
-    <div id="feature-{{ section.slug }}" style="background-color:#{{ section.color }};">
+    <div id="{{ section.slug }}" class="index-section feature-section" style="background-color:#{{ section.color }};">
         <div class="container offsetanchor">
-                <div class="section-headder" id="{{ section.slug }}"><center>
+                <div class="section-headder" id="feature-{{ section.slug }}"><center>
                     <span class="{{ section.glyph }}" style="font-size:100px;" aria-hidden="true"></span>
                     <h2>{{ section.name }}</h2>
                 </center></div>
@@ -86,42 +85,14 @@ permalink: /
             </div>
         </div>
     </div>
-</div>
     {% endfor %}
 
 
-<div id="about">
-    <div id="feature-about" style="background-color:#eee;">
-         {% include about.html %}
-    </div>
+<div id="about" class="index-section" style="background-color:#eee;">
+    {% include about.html %}
 </div>
 
 
-<div class="container offsetanchor" id="security">
-        <div class="section-headder" id="{{ section.slug }}"><center>
-            <i class="fa fa-lock" style="font-size:60px;" aria-hidden="true"></i>
-            <h2>Privacy & Security</h2>
-        </center></div>
-    <div class="row">
-        <div class="col-md-6" style="min-height:280px;">
-            <h2>Security</h2>
-            <ul>
-                <li>SSL/TLS encryption is <a href="https://github.com/stpeter/manifesto/blob/master/manifesto.txt">required</a>
-                    between clients and servers (C2S) and server to server (S2S) connections</li>
-                <li>The backend is configured to store hashed and salted authentication data</li>
-                <li>Use <a href="https://conversations.im/omemo/">OMEMO</a> or
-                    <a href="{{ site.url }}/help/definitions/#otr">Off-the-Record (OTR)</a>
-                    in your chat client to have fully encrypted chats</li>
-            </ul>
-        </div>
-        <div class="col-md-6" style="min-height:280px;">
-            <h2 id="policies">Policies</h2>
-            <p>No more information is collected and stored than what is absolutely necessary.
-            This includes rosters, vCards, offline messages, etc.</p>
-            <p>Spam and abuse including advertisements of any kind will not be tolerated on
-            this network. For spam or abuse please contact us with the full details.</p>
-            <p>Please see the <a href="{{ site.url }}/privacy-policy/">Privacy Policy</a> for
-            a more detailed explanation.</p>
-        </div>
-    </div>
+<div id="security" class="index-section-last">
+    {% include security.html %}
 </div>

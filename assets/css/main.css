@@ -14,22 +14,36 @@ body {
   width: 100%;
   background-color: #f5f5f5;
 }
-.section-headder {
-    padding: 60px 0 10px;
+.index-section {
+  padding: 100px 0 40px;
+}
+
+.index-section-last {
+  padding: 100px 0 70px;
 }
 
 .list-inline {
   display: inline;
 }
 
+.site-title {
+  text-align: right;
+}
+
 .site-title h1 {
   font-size: 4em;
 }
 
-#contact-list {
+.feature-section {
+  padding-bottom: 40px;
+}
+
+.contact-list {
   font-size:2em;
   text-align: center;
+  padding: unset;
 }
+
 td.PASSED {
     background-color: green;
     color: white;
@@ -52,8 +66,12 @@ td.FAILED {
     color: #fff;
 }
 
-@media (max-width: 968px) {
+@media (max-width: 768px) {
       .pull-right, .pull-left {
-              text-align: center;
+           text-align: center;
        } 
+       .site-title {
+           display: none;
+       }
+  
     }
