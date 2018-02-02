@@ -1,8 +1,11 @@
 - name: Mobile
   slug: mobile
+  index: download-1
 
 - name: Destop/Laptop
   slug: desktop
+  index: download-2
 
 #- name: Server
 #  slug: server
+#  index: download-3

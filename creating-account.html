@@ -4,13 +4,24 @@ title: Creating a New Account
 permalink: /creating-a-new-account/
 ---
 
-<div class="container">
+<div id="creating-account" class="container">
   <div class="row justify-content">
 
-    <div class="col-3">
-        <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;margin-top:-80px;">
+<div class="jumbotron">
+  <h1 class="display-4">New User Guide</h1>
+  <p class="lead">This page is here to help a new user, register an account, download the needed software, and log into the server.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead float-xs-right">
+    <a class="btn btn-primary btn-lg" href="#download" role="button">Get Started</a>
+  </p>
+</div>
+
+    <div class="col-3" style="padding-left:0;">
+        <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;padding-left:0;margin-top:-80px;">
             <a class="navbar-brand" href="#">Index</a>
-            <nav class="nav nav-pills flex-column bg-light">
+            <nav id="nav-body" class="nav nav-pills flex-column bg-light">
+                <a class="nav-link" href="#overview">Overview</a>
                 <a class="nav-link" href="#download">Download a Client</a>
                 <nav class="nav nav-pills flex-column">
                     <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
@@ -27,6 +38,19 @@ permalink: /creating-a-new-account/
     </div>
 
     <div class="col-9">
+
+        <!-- This is the Overview Section -->
+
+        <div id="overview" class="section-headder">
+            <center><h1>Overview</h1></center>
+        </div>
+
+        <p>It may look like there are a bunch of steps to get all setup, but it is really pretty easy and quick to do.</p>
+
+        <p></p>
+
+        <!-- This is the Download a Client Section -->
+
         <div id="download" class="section-headder">
             <center><h1>Step 1: Download a Client</h1></center>
         </div>
@@ -67,6 +91,87 @@ permalink: /creating-a-new-account/
 </div>
 
 
+<div id="accordion">
+
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Register an Account on This Server
+        </button>
+      </h5>
+    </div>
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+                <div class="row">
+                    <div class="card" style="border-color:#9FCF6C;margin-left:25px;">
+                        <div class="panel-heading" style="background-color:#9FCF6C;border-color:transparent;color:rgb(52, 68, 35);">
+                            <div class="panel-title"><center><h4>Registration Form</h4></center></div>
+                        </div>
+                        <div class="panel-body" style="margin-bottom: 15px;">
+                            <form action="{{ site.url }}/register/" method="post" class="form-horizontal needs-validation" style="padding: 15px;" novalidate>
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="username" placeholder="Username" id="username" required />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" style="font-size:0.8em;font-weight:bold;">@{hostname}</span>
+                                        </div>
+                                        <div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" name="password" placeholder="Password" id="password" required />
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" id="confirm-password" required />
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 25px" class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" name="email" placeholder="E-Mail" id="email" required />
+                                        <div class="invalid-feedback" style="width: 100%;">Your email address is required.</div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom:25px;margin:0 auto;" class="input-group test">
+                                    {captcha}
+                                </div>
+                                <div style="margin-top:15px;margin-bottom:0;" class="form-group">
+                                    <div class="col-sm-12 controls">
+                                        <input type="submit" value="Register" class="btn btn-success pull-right" />
+                                        <input type="reset" value="Clear" class="btn btn-default pull-right" style="margin-right:15px" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Register an Account on Another Server 
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+
+
 <table class='table' style='width:100%'>
     <thead>
         <tr>
@@ -92,6 +197,11 @@ permalink: /creating-a-new-account/
     </tbody>
 </table>
 
+
+
+      </div>
+    </div>
+  </div>
 
 
 <div id="connect" class="section-headder">
