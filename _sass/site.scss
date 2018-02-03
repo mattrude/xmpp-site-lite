@@ -1,5 +1,5 @@
 $site-color: #9FCF6C;
-$site-color: #c3950d;
+//$site-color: #c3950d;
 
 html {
   position: relative;
@@ -19,6 +19,49 @@ a:hover {
     text-decoration: underline;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: darken($site-color, 10%);
+    border-color: darken($site-color, 15%);
+}
+
+.btn-primary:hover {
+    color: darken($site-color, 5%);
+    background-color: darken($site-color, 25%);
+    border-color: transparent;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: adjust-color($site-color, $blue: 20);
+    background-color: adjust-color($site-color, $blue: 10);
+    border-color: transparent;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: darken($site-color, 20%);
+    border-color: darken($site-color, 25%);
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: darken($site-color, 10%);
+    border-color: darken($site-color, 15%);;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: darken($site-color, 10%);
+    background-color: transparent;
+}
+
+.btn-link:hover {
+    color: darken($site-color, 30%);
+    text-decoration: underline;
+    background-color: transparent;
+    border-color: transparent;
+}
+
 .wrapper {
   margin-bottom: 120px;
 }
@@ -29,7 +72,6 @@ a:hover {
 
 #register-window {
   .card {
-      border-color: $site-color;
       margin-left: 25px;
       min-height: unset;
       margin-bottom: unset;
@@ -55,18 +97,12 @@ a:hover {
   }
 }
 
-.btn-success {
-    color: #fff;
-    background-color: darken($site-color, 20%);
-    border-color: darken($site-color, 25%);
-}
-
 .alert-warning {
     color: darken($site-color, 30%);
     background-color: lighten($site-color, 20%);
     border-color: lighten($site-color, 15%);
     a {
-        color: darken($site-color, 40%);
+        color: darken($site-color, 45%);
     }
 }
 
@@ -94,9 +130,13 @@ a:hover {
   padding-bottom: 40px;
 }
 
-#accordion .card {
-  min-height: unset;
-  margin-bottom: unset;
+#accordion {
+  .card {
+      min-height: unset;
+      margin-bottom: unset;
+      border-radius: unset;
+      border: lighten($site-color, 25%);
+  }
 }
 
 #creating-account {
@@ -106,12 +146,12 @@ a:hover {
     #nav-body {
         background-color: lighten($site-color, 20%)!important;
         a {
-            color: darken($site-color, 20%);
+            color: darken($site-color, 15%);
         }
     }
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-        background-color: darken($site-color, 30%);
-        color: #fff;
+        color: lighten($site-color, 5%)!important;
+        background-color: darken($site-color, 10%)!important;
     }
 }
 
@@ -122,6 +162,10 @@ a:hover {
 .card-img-top {
   width: 100px;
   margin: 30px auto 0;
+}
+
+.card-header {
+  background-color: lighten($site-color, 20%);
 }
 
 .contact-list {
@@ -137,10 +181,6 @@ td.PASSED {
 td.FAILED {
     background-color: red;
     color: white;
-}
-
-.h1, .h2, .h3, h1, h2, h3 {
-/*    padding-top: 60px; */
 }
 
 #definitions h2 {

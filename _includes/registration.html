@@ -41,58 +41,6 @@
                     </div>
                 </div>
             </div>
-            <div id="loginbox" class="mainbox col-md-4 col-sm-8 col-sx-offset-2">
-                <div class="row">
-                    <div class="card" style="border-color:#9FCF6C;margin-left:25px;">
-                        <div class="panel-heading" style="background-color:#9FCF6C;border-color:transparent;color:rgb(52, 68, 35);">
-                            <div class="panel-title"><center><h4>Registration Form</h4></center></div>
-                        </div>
-                        <div class="panel-body" style="margin-bottom: 15px;">
-                            <!--
-                            <h3 class="text-center text-danger" style="margin-top:0px;">{notice}</h3>
-                            -->
-                            <form action="{{ site.url }}/register/" method="post" class="form-horizontal needs-validation" style="padding: 15px;" novalidate>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" name="username" placeholder="Username" id="username" required />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text" style="font-size:0.8em;font-weight:bold;">@{{ site.xmpp-url }}</span>
-                                        </div>
-                                        <div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" name="password" placeholder="Password" id="password" required />
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" name="confirm-password" placeholder="Confirm Password" id="confirm-password" required />
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" name="email" placeholder="E-Mail" id="email" required />
-                                        <div class="invalid-feedback" style="width: 100%;">Your email address is required.</div>
-                                    </div>
-                                </div>
-                                <div style="margin-bottom:25px;margin:0 auto;" class="input-group test">
-                                    {captcha}
-                                </div>
-                                <div style="margin-top:15px;margin-bottom:0;" class="form-group">
-                                    <div class="col-sm-12 controls">
-                                        <input type="submit" value="Register" class="btn btn-success pull-right" />
-                                        <input type="reset" value="Clear" class="btn btn-default pull-right" style="margin-right:15px" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </div>
+        </div>
+       {% include registration-form.html %}
+    </div>
