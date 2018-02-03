@@ -1,6 +1,6 @@
 # Communication Service Website Source
 
-[![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site.svg)](https://github.com/mattrude/xmpp-site/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site.svg)](https://github.com/mattrude/xmpp-site/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](http://github.com/mattrude/xmpp-site)
+[![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](http://github.com/mattrude/xmpp-site-lite)
 
 This is the website for [Matt Rude](https://mattrude.com)'s XMPP service.  This site may be loaded via the [xmpp-site-builder](https://code.mattrude.com/xmpp-site-builder/) repository.
 
@@ -19,8 +19,8 @@ First change into the source directory of the site, once in, update via
 A simple script would be
 
     rm -rf /var/src/xmpp-site && mkdir -p /var/src/ && \
-    git clone http://code.mattrude.com/git/xmpp-site /var/src/xmpp-site -q && \
-    cd /var/src/xmpp-site && jekyll build -q && rm -rf /var/src/xmpp-site
+    git clone http://code.mattrude.com/git/xmpp-site-lite /var/src/xmpp-site-lite -q && \
+    cd /var/src/xmpp-site-lite && jekyll build -q
 
 ## Installing the server
 
