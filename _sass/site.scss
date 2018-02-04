@@ -135,6 +135,41 @@ a:hover {
     }
 }
 
+// New Index Page
+
+#index-jobotron {
+    padding-top: 80px;
+    border-radius: 0;
+}
+
+#server-features-index {
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    #navbar-main {
+        padding: 80px 0 0 0;
+        margin-top: -80px;
+        background: transparent!important;
+    }
+    #nav-body {
+        color: black;
+        background: transparent!important;
+        width: 100%
+    }
+    .nav-pills .nav-link {
+        border-radius: 0;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    a {
+        color:black;
+        margin: unset!important;
+    }
+}
+
+
 // New User Guide
 
 .section-header-nug {

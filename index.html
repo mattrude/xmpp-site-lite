@@ -4,9 +4,11 @@ title: Home
 permalink: /
 ---
 
+<div id="home">
+
 <!-- Opening Site Jumbo Tron -->
 
-<div class="jumbotron">
+<div id="index-jobotron" class="jumbotron">
     <div class="container text-center">
         <div class="row">
             <div class="col-md-4">
@@ -58,6 +60,7 @@ permalink: /
     </div>
 </div>
 
+</div>
 <!-- Register Form -->
 
 {% if site.register-web == 2 %}
@@ -70,34 +73,75 @@ permalink: /
 </div>
 {% endif %}
 
-<!--  Site Features -->
 
-{% for section in site.data.sections %}
-<div id="{{ section.slug }}" class="index-section feature-section" style="background-color:#{{ section.color }};">
-    <div class="container offsetanchor">
-        <div class="section-headder" id="feature-{{ section.slug }}">
-            <center>
-                <span class="{{ section.glyph }}" style="font-size:100px;" aria-hidden="true"></span>
-                <h2>{{ section.name }}</h2>
-            </center>
-        </div>
-        <div class="row">
-            <div class="feature-{{ section.slug }}">
-                <div class="row">
-                    {% for feature in site.data.features %}
-                    {% if feature.section == section.slug %}
-                    <div class="col-md-4 col-sm-6" style="min-height:280px;">
-                        <h3>{{ feature.name }}</h3>
-                        <p>{{ feature.text }}</p>
-                    </div>
-                    {% endif %}
+<div id="server-features" class="container-fluid">
+    <div class="row justify-content">
+        <!-- Starting the page index nav menu -->
+        <div id="server-features-index" class="col-2">
+            <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;margin-top:-80px;">
+                <nav id="nav-body" class="nav nav-pills flex-column bg-light">
+                    <nav class="nav nav-pills flex-column">
+                        <a id="features-index" class="nav-link ml-3 my-1" href="#features"><b>Server Features</b></a>
+                    </nav>
+                    {% for section in site.data.sections %}
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#{{ section.slug }}">{{ section.name }}</a>
+                    </nav>
                     {% endfor %}
-                </div>
-            </div>
+                </nav>
+            </nav>
         </div>
-   </div>
-</div>
-{% endfor %}
+        <!-- Ending the page index nav menu -->
+
+        <!-- Starting the content section of the page -->
+        <div id="server-features-content" class="col-10" style="padding-right:unset;">
+           <div id="features" class="index-section feature-section" style="min-height:400px;margin-left:-23%;padding-left:23%;background-color: rgba(0, 0, 0, 0.1);">
+               <div class="container offsetanchor">
+                   <div class="section-headder" id="features-section">
+                       <center>
+                           <span class="{{ section.glyph }}" style="font-size:100px;" aria-hidden="true"></span>
+                           <h2>Server Features</h2>
+                       </center>
+                   </div>
+                   <div id="feature-heading-content">
+                       <p>XMPP (<i>previous known as jabber</i>) is an <b>instant messaging</b> system that is <b>free</b>, <b>standard</b>,
+                       and <b>open</b>; allowing you to chat live with your family, friends and professional contacts, and be warned of
+                       the <b>presence</b> of your contacts, while keeping your <b>independence</b> vis-à vis-à-vis your software and
+                       service providers.</p>
+                   </div>
+               </div>
+           </div>
+
+            <!--  Site Features -->
+            {% for section in site.data.sections %}
+            <div id="{{ section.slug }}" class="index-section feature-section" style="background-color:#{{ section.color }};margin-left:-23%;padding-left:23%;">
+               <div class="container offsetanchor">
+                   <div class="section-headder" id="feature-{{ section.slug }}">
+                       <center>
+                           <span class="{{ section.glyph }}" style="font-size:100px;" aria-hidden="true"></span>
+                           <h2>{{ section.name }}</h2>
+                       </center>
+                   </div>
+                   <div class="feature-{{ section.slug }}">
+                       <div class="row">
+                           {% for feature in site.data.features %}
+                           {% if feature.section == section.slug %}
+                           <div class="col-md-4 col-sm-6" style="min-height:280px;">
+                               <h3>{{ feature.name }}</h3>
+                                   <p>{{ feature.text }}</p>
+                           </div>
+                           {% endif %}
+                           {% endfor %}
+                       </div>
+                   </div>
+               </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- Ending the content section of the page -->
+
+    </div> <!-- Closing the row justify-content clases -->
+</div> <!-- Closing the ID creating-account and the main container class -->
 
 <!-- About Section -->
 
@@ -110,3 +154,4 @@ permalink: /
 <div id="security" class="index-section-last">
     {% include security.html %}
 </div>
+
