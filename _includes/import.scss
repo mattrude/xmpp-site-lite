@@ -1,0 +1,26 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+@charset "utf-8";
+
+$site-color: "{{ site.color }}";
+
+//$site-color: #9FCF6C;
+//$site-color: #c3950d;
+
+//////////////////////////////////////////////////////////////
+
+$color-background: $site-color;
+$color-link: darken($site-color, 20%);
+
+// Buttons
+$color-btn-primary: darken($site-color, 10%);
+$color-btn-success: darken($site-color, 20%);
+$color-btn-link:    darken($site-color, 30%);
+
+
+//////////////////////////////////////////////////////////////
+
+@import "site";
+@import "bootstrap4/bootstrap";

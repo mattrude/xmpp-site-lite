@@ -1,0 +1,182 @@
+- name: 5222.de
+  url: https://5222.de/
+  xep-375: 1
+  xep-368: 1
+  tor: jtovcabr2vhflcqg.onion
+  language: German
+  location: Germany
+  registration: Website
+  registration-url: https://blog.5222.de/account/
+
+- name: bommboo.de
+  url: https://bommboo.de/
+  xep-375: 1
+  xep-368: 1
+  tor: ujvdniabz53upqfx.onion
+  language: German
+  location: Germany
+  registration: Website
+  registration-url: https://bommboo.de:5281/register/
+
+- name: chatme.im
+  url: https://chatme.im/
+  xep-375: 1
+  xep-368: 0
+  language: Italian
+  registration: In-band
+
+- name: chinwag.im
+  url: https://chinwag.im/
+  registration: Website
+  registration-url: https://chat.chinwag.im/?accountnext/chinwag.im/
+  xep-375: 1
+  xep-368: 0
+  language: English
+
+- name: conversations.im
+  url: https://account.conversations.im/
+  registration: In-band
+  xep-375: 1
+  xep-368: 1
+  language: English
+  price: €12/year
+
+- name: creep.im
+  url: https://creep.im/
+  xep-375: 1
+  xep-368: 0
+  tor: creep7nissfumwyx.onion
+  language: English
+  location: Moscow, Russia
+  registration: In-band
+
+- name: elaon.de
+  url: https://elaon.de/
+  registration: Website
+  registration-url: https://elaon.de/info/services/xmpp.html
+  xep-375: 1
+  xep-368: 0
+  language: German
+
+- name: high-way.me
+  url: https://high-way.me/
+  xep-375: 1
+  xep-368: 1
+  language: German
+  registration: Website
+  registration-url: https://high-way.me/login/
+
+- name: im.apinc.org
+  url: https://chat.jabberfr.org/
+  xep-375: 1
+  xep-368: 1
+  language: French
+  location: France
+  registration: In-band
+
+- name: jabber.cat
+  url: https://jabber.cat/english.shtml
+  xep-375: 1
+  xep-368: 1
+  language: Catalan
+  registration: <i>Closed</i>
+  tor: sybzodlxacch7st7.onion
+
+- name: jabber.fr
+  url: https://chat.jabberfr.org/
+  xep-375: 1
+  xep-368: 1
+  language: French
+  location: France
+  registration: In-band
+
+- name: jabber-germany.de
+  url: https://jabber-germany.de/
+  xep-375: 1
+  xep-368: 1
+  language: English
+  registration: In-band
+  tor: dbbrphko5tqcpar3.onion
+
+- name: jabber.hot-chilli.net
+  url: https://jabber.hot-chilli.net/
+  xep-375: 1
+  xep-368: 1
+  language: English
+  location: Germany
+  registration: Website
+  registration-url: https://jabber.hot-chilli.net/account/create/
+
+- name: rwth-aachen.de
+  url: https://jabber.rwth-aachen.de/
+  xep-375: 1
+  xep-368: 1
+  language: English
+  location: Germany
+  registration: Website
+  registration-url: https://jabber.rwth-aachen.de/account/register/
+
+- name: jabjab.de
+  url: https://jabjab.de/index.php?lang=gb
+  xep-375: 1
+  xep-368: 1
+  language: German
+  location: Germany
+  registration: Website
+  registration-url: https://jabjab.de/registrieren.php?lang=gb
+
+- name: mailbox.org
+  url: https://mailbox.org/en/
+  xep-375: 1
+  xep-368: 0
+  language: German
+  location: Germany
+  price: €12/year
+  registration: Website
+  registration-url: https://mailbox.org/en/signup/
+
+- name: mail.de
+  url: https://mail.de/
+  xep-375: 1
+  xep-368: 1
+  language: German
+  location: Germany
+  price: €24/year
+  registration: Website
+  registration-url: https://registrierung.mail.de/
+
+- name: pimux.de
+  url: https://pimux.de/
+  xep-375: 1
+  xep-368: 1
+  language: German
+  location: Germany
+  registration: Website
+  registration-url: https://www.pimux.de/page/registrierung
+  tor: maspm2xs6xavmpo6.onion
+
+- name: riotcat.org
+  url: https://riotcat.org/
+  registration: In-band
+  xep-375: 1
+  xep-368: 1
+  language: English
+
+- name: trashserver.net
+  url: https://trashserver.net/
+  xep-375: 1
+  xep-368: 1
+  language: German
+  location: Kumhausen, Germany
+  registration: Website
+  registration-url: https://trashserver.net/registrieren/
+  tor: m4c722bvc2r7brnn.onion
+
+- name: wiuwiu.de
+  url: https://wiuwiu.de/
+  xep-375: 1
+  xep-368: 1
+  language: German
+  registration: Website
+  registration-url: https://wiuwiu.de/xmpp/
+  tor: jrbiogs6dv5txt5s.onion

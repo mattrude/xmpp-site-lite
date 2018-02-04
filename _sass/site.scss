@@ -1,5 +1,23 @@
+@charset "utf-8";
+
+//$site-color: "{{ site.color }}";
+
 $site-color: #9FCF6C;
 //$site-color: #c3950d;
+
+//////////////////////////////////////////////////////////////
+
+$color-background: $site-color;
+$color-link: darken($site-color, 20%);
+
+// Buttons
+$color-btn-primary: darken($site-color, 10%);
+$color-btn-success: darken($site-color, 20%);
+$color-btn-link:    darken($site-color, 30%);
+
+
+//////////////////////////////////////////////////////////////
+
 
 html {
   position: relative;
@@ -10,92 +28,79 @@ body {
   position: relative;
 }
 
+// Links
+
 a {
-  color: darken($site-color, 10%);
+    color: $color-link;
 }
 
 a:hover {
-    color: darken($site-color, 30%);
+    color: lighten($color-link, 10%);
     text-decoration: underline;
 }
 
+// Buttons
+
 .btn-primary {
     color: #fff;
-    background-color: darken($site-color, 10%);
-    border-color: darken($site-color, 15%);
-}
-
-.btn-primary:hover {
-    color: darken($site-color, 5%);
-    background-color: darken($site-color, 25%);
-    border-color: transparent;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    color: adjust-color($site-color, $blue: 20);
-    background-color: adjust-color($site-color, $blue: 10);
-    border-color: transparent;
+    background-color: $color-btn-primary;
+    border-color: darken($color-btn-primary, 15%);
+    &:hover {
+        color: darken($color-btn-primary, 5%);
+        background-color: darken($color-btn-primary, 20%);
+        border-color: transparent;
+    }
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active,
+    .show > &.dropdown-toggle {
+        color: adjust-color($color-btn-primary, $blue: 20);
+        background-color: adjust-color($color-btn-primary, $blue: 10);
+        border-color: transparent;
+    }
+    &:not(:disabled):not(.disabled).active:focus,
+    &:not(:disabled):not(.disabled):active:focus,
+    .show> &.dropdown-toggle:focuas,
+    .focus,
+    &:focus {
+        box-shadow: 0 0 0 0.2rem adjust-color($color-btn-primary, $blue: 20);
+    }
 }
 
 .btn-success {
     color: #fff;
-    background-color: darken($site-color, 20%);
-    border-color: darken($site-color, 25%);
-}
-
-.btn-success:hover {
-    color: #fff;
-    background-color: darken($site-color, 10%);
-    border-color: darken($site-color, 15%);;
+    background-color: $color-btn-success;
+    border-color: darken($color-btn-success, 15%);
+    :hover {
+        color: #fff;
+        background-color: darken($color-btn-success, 5%);
+        border-color: darken($color-btn-success, 20%);
+    }
+    :not(:disabled):not(.disabled).active,
+    :not(:disabled):not(.disabled):active {
+        color: adjust-color($color-btn-success, $blue: 20);
+        background-color: adjust-color($color-btn-success, $blue: 10);
+        border-color: transparent;
+    }
 }
 
 .btn-link {
-    font-weight: 400;
-    color: darken($site-color, 10%);
-    background-color: transparent;
+    color: #fff;
+    background-color: $color-btn-link;
+    border-color: darken($color-btn-link, 15%);
+    :hover {
+        color: #fff;
+        background-color: darken($color-btn-link, 5%);
+        border-color: darken($color-btn-link, 20%);
+    }
+    :not(:disabled):not(.disabled).active,
+    :not(:disabled):not(.disabled):active {
+        color: adjust-color($color-btn-link, $blue: 20);
+        background-color: adjust-color($color-btn-link, $blue: 10);
+        border-color: transparent;
+    }
 }
 
-.btn-link:hover {
-    color: darken($site-color, 30%);
-    text-decoration: underline;
-    background-color: transparent;
-    border-color: transparent;
-}
-
-.wrapper {
-  margin-bottom: 120px;
-}
-
-.jumbotron {
-  background-color: adjust-color($site-color, $blue: 5);
-}
-
-#register-window {
-  .card {
-      margin-left: 25px;
-      min-height: unset;
-      margin-bottom: unset;
-  }
-  .panel-heading {
-      background-color: $site-color;
-      border-color: transparent;
-      color: darken($site-color, 60%);
-  }
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: $site-color;
-  a {
-      color: #fff;
-  }
-  a:hover {
-      color: darken($site-color, 40%);
-      text-decoration: underline;
-  }
-}
+// Banners
 
 .alert-warning {
     color: darken($site-color, 30%);
@@ -103,6 +108,75 @@ a:hover {
     border-color: lighten($site-color, 15%);
     a {
         color: darken($site-color, 45%);
+        font-weight: bold;
+    }
+}
+
+.alert-info {
+    color: darken($site-color, 20%);
+    background-color: lighten($site-color, 20%);
+    border-color: lighten($site-color, 15%);
+    a {
+        color: darken($site-color, 45%);
+        font-weight: bold;
+    }
+}
+
+// Index Page
+
+#opening-side {
+    margin:0 auto 25px;
+}
+
+#register {
+    #feature-register {
+        background-color:#eee;
+        padding:60px 0;
+    }
+}
+
+// New User Guide
+
+.section-header-nug {
+    padding-top: 60px;
+}
+
+// Main Site Compoints
+
+.wrapper {
+    margin-bottom: 120px;
+}
+
+.jumbotron {
+    background-color: $color-background;
+    padding: 2rem;
+}
+
+#register-window {
+    .card {
+        margin-left: 25px;
+        min-height: unset;
+        margin-bottom: unset;
+    }
+
+    .panel-heading {
+        background-color: $site-color;
+        border-color: transparent;
+        color: darken($site-color, 60%);
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $site-color;
+    a {
+        color: #fff;
+    }
+    a:hover {
+        color: darken($site-color, 40%);
+        text-decoration: underline;
     }
 }
 
@@ -161,6 +235,7 @@ a:hover {
 }
 .card-img-top {
   width: 100px;
+  height: 100px;
   margin: 30px auto 0;
 }
 

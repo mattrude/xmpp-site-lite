@@ -7,8 +7,9 @@ name: "soderparr.com"
 baseurl: "soderparr.com"
 destination: "/var/www/im.soderparr.com"
 prosody-version: "0.10"
-register-web: 1
+register-web: 0
 color: "#9FCF6C"
+#color: "#c3950d"
 
 owner_name: "Matt Rude"
 owner_pgpkey: "0xc4909ee495b0761f"

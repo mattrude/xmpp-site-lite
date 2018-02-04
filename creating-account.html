@@ -1,0 +1,84 @@
+---
+layout: default
+title: Creating a New Account
+permalink: /new-user-guide/
+---
+
+<div id="creating-account" class="container">
+    <div class="row justify-content">
+
+        <!-- Starting the Top Jubotron of the page -->
+        <div class="jumbotron">
+            <h1 class="display-4">New User Guide</h1>
+            <p class="lead">XMPP (<i>formerly known as Jabber</i>) is an instant messaging system that is, free, standard, and open; and allows you to chat live with your family, friends and professional contacts, and be warned of the presence of your contacts, while keeping your independence vis-à vis-à-vis your software and service providers.</p>
+            <hr class="my-4">
+            <p>This page is here to help a new user, register an account, download the needed software, and log into the server.</p>
+            <p class="float-right">
+                <a class="btn btn-primary btn-lg" href="#overview" role="button">Get Started</a>
+            </p>
+        </div>
+        <!-- Ending the Top Jubotron of the page -->
+
+        <!-- Starting the page index nav menu -->
+        <div class="col-3" style="padding-left:0;">
+            <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;padding-left:0;margin-top:-80px;">
+                <a class="navbar-brand" href="#"><b>Page Index</b></a>
+                <nav id="nav-body" class="nav nav-pills flex-column bg-light">
+                    <a class="nav-link" href="#overview">Overview</a>
+                    <a class="nav-link" href="#download">Download a Client</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#mobile">Mobile</a>
+                        <a class="nav-link ml-3 my-1" href="#desktop">Desktop</a>
+                    </nav>
+                    <a class="nav-link" href="#register">Register an Account</a>
+                    {% if site.register-web >= 1 %}
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ml-3 my-1" href="#register-local-server">on Local Server</a>
+                        <a class="nav-link ml-3 my-1" href="#register-diffrent-server">on Diffrent Server</a>
+                    </nav>
+                    {% endif %}
+                    <a class="nav-link" href="#connect">Connect your Account</a>
+                </nav>
+            </nav>
+        </div>
+        <!-- Ending the page index nav menu -->
+
+        <!-- Starting the content section of the page -->
+        <div class="col-9">
+            <!-- This is the Overview Section -->
+            <div id="overview" class="section-header-nug">
+                <center><h1>Overview</h1></center>
+            </div>
+            
+            <p>There are 3 simple steps to setting up a new XMPP account:</p>
+            
+            <ol>
+                <li>Download a Client</li>
+                <li>Register an Account</li>
+                <li>Connect your Account</li>
+            </ol>
+            
+            <p></p>
+            
+            <!-- This is the Download a Client Section -->
+            <div id="download" class="section-header-nug">
+                <center><h1>Step 1: Download a Client</h1></center>
+            </div>
+            
+            {% include guide-download.html %}
+            
+            <!-- This is the Register an Account Section -->
+            <div id="register" class="section-header-nug">
+                <center><h1>Step 2: Choose a Server and Register an Account</h1></center>
+            </div>
+            
+            {% include guide-register.html %}
+            
+            <!-- This is the Connect your Client Section -->
+            <div id="connect" class="section-header-nug">
+                <center><h1>Step 3: Connect your Client to your New Account</h1></center>
+            </div>
+        </div>
+        <!-- Ending the content section of the page -->
+    </div> <!-- Closing the row justify-content clases -->
+</div> <!-- Closing the ID creating-account and the main container class

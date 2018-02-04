@@ -1,15 +1,11 @@
-
-                {% if site.register-web == 1 %}
-                <div id="register-local-server" class="section-header-nug">
-                    <center><h2>Register an Account on the Local Server</h2></center>
-                </div>
+            <div id="register-window" class="mainbox">
                 <div class="row">
-                    {% if site.register-web == 2 %}
-                    <div class="card" style="border-color:#9FCF6C;margin-left:25px;">
-                        <div class="panel-heading" style="background-color:#9FCF6C;border-color:transparent;color:rgb(52, 68, 35);">
+                    <div class="card">
+                        <div class="panel-heading">
                             <div class="panel-title"><center><h4>Registration Form</h4></center></div>
                         </div>
                         <div class="panel-body" style="margin-bottom: 15px;">
+                            <h3 class="text-center text-danger" style="margin-top:0px;">{notice}</h3>
                             <form action="{{ site.url }}/register/" method="post" class="form-horizontal needs-validation" style="padding: 15px;" novalidate>
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -52,44 +48,4 @@
                             </form>
                         </div>
                     </div>
-                    {% endif %}
-                    <p>You will need to go to the <a href="/register">Register</a> page.
                 </div>
-
-
-
-
-            <div id="register-diffrent-server" class="section-header-nug">
-                <center><h2>Register an Account on a Diffrent Server</h2></center>
-            </div>
-
-                {% endif %}
-<p>This list of servrs may</p>
-
-<div class="alert alert-info" role="alert">Servers listed with the registraion method of "<i>In-band</i>", require you to register with a client.  Servers with a "<i>Website</i>" require you to connect to the website and register via a form and generally will require you to provide an email and solve a captcha.</div>
-
-<h3>List of Servers</h3>
-<table class='table' style='width:100%'>
-    <thead>
-        <tr>
-            <th>Service Name</th>
-            <th><center>Registration Method</center></th>
-            <th><center>Website<br />Language</center></th>
-            <th><center>Service<br />Price</center></th>
-            <th><a href='https://xmpp.org/extensions/xep-0375.html'>XEP-0375</a> complient</th>
-            <th><a href='https://xmpp.org/extensions/xep-0368.html'>XEP-0368</a> complient</th>
-        </tr>
-   </thead>
-   <tbody>
-{% for service in site.data.server-compliance %}
-        <tr>
-            <td style="min-width:150px;"><a href='{{ service.url }}'>{{ service.name }}</a></td>
-            <td style="min-width:100px;"><center>{% if service.registration-url %}<a href="{{ service.registration-url }}">{{ service.registration }}</a>{% elsif service.registration %}{{ service.registration}}{% else %}<i>Unknown</i>{% endif %}</center></td>
-            <td><center>{{ service.language }}</center></td>
-            <td><center>{% if service.price %}{{ service.price }}{% else %}Free{% endif %}<center></td>
-            {% if service.xep-375 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
-            {% if service.xep-368 == 1 %}<td class=PASSED style="width:75px;"><center>Yes</center></td>{% else %}<td class=FAILED><center>No</center></td>{% endif %}
-        </tr>
-{%  endfor %}
-    </tbody>
-</table>
