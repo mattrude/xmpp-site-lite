@@ -45,3 +45,11 @@
 - name: Client State Indication
   section: mobile
   text: Client State Indication or CSI (<a href="https://xmpp.org/extensions/xep-0352.html">XEP-0352</a>) is a way for mobile clients to tell the server that they are sitting in someones pocket and would rather not get some less urgent things pushed to it.
+
+- name: Security
+  section: security
+  text: <ul><li>SSL/TLS encryption is <a href="https://github.com/stpeter/manifesto/blob/master/manifesto.txt">required</a> between clients and servers (C2S) and server to server (S2S) connections</li><li>The backend is configured to store hashed and salted authentication data</li><li>Use <a href="https://conversations.im/omemo/">OMEMO</a> or <a href="{{ site.url }}/help/definitions/#otr">Off-the-Record (OTR)</a> in your chat client to have fully encrypted chats</li></ul>
+
+- name: Policies
+  section: security
+  text: <p>No more information is collected and stored than what is absolutely necessary. This includes rosters, vCards, offline messages, etc.</p><p>Spam and abuse including advertisements of any kind will not be tolerated on this network. For spam or abuse please contact us with the full details.</p><p>Please see the <a href="/privacy-policy/">Privacy Policy</a> for a more detailed explanation.</p>

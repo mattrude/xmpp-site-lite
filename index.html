@@ -78,10 +78,10 @@ permalink: /
     <div class="row justify-content">
         <!-- Starting the page index nav menu -->
         <div id="server-features-index" class="col-2">
-            <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:80px;margin-top:-80px;">
+            <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:50px;margin-top:-50px;">
                 <nav id="nav-body" class="nav nav-pills flex-column bg-light">
                     <nav class="nav nav-pills flex-column">
-                        <a id="features-index" class="nav-link ml-3 my-1" href="#features"><b>Server Features</b></a>
+                        <a id="features-index" class="nav-link ml-3 my-1" href="#features" style="line-height:50px;text-align:center;font-size:1.3rem;"><b>Server Features</b></a>
                     </nav>
                     {% for section in site.data.sections %}
                     <nav class="nav nav-pills flex-column">
@@ -124,9 +124,10 @@ permalink: /
                    </div>
                    <div class="feature-{{ section.slug }}">
                        <div class="row">
+                           <p>{{ section.text }}</p>
                            {% for feature in site.data.features %}
                            {% if feature.section == section.slug %}
-                           <div class="col-md-4 col-sm-6" style="min-height:280px;">
+                           <div class="{% if section.col == 3 %}col-md-4 col-sm-6{% else %}col-6{% endif %}" style="min-height:280px;">
                                <h3>{{ feature.name }}</h3>
                                    <p>{{ feature.text }}</p>
                            </div>
@@ -145,13 +146,6 @@ permalink: /
 
 <!-- About Section -->
 
-<div id="about" class="index-section" style="background-color:#eee;">
+<div id="about" class="index-section" style="background-color:#eee;padding-bottom:80px;">
     {% include about.html %}
 </div>
-
-<!-- Security Section -->
-
-<div id="security" class="index-section-last">
-    {% include security.html %}
-</div>
-

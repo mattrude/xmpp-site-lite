@@ -7,10 +7,16 @@
 - name: File Sharing
   slug: file
   glyph: fa fa-cloud-download
-  col: 2
+  col: 3
 
 - name: Mobile
   slug: mobile
   glyph: fa fa-mobile
   color: E66E20
+  text: Optimized for mobile use, this server allows clients to use low power idle while waiting for messaages.
   col: 3
+
+- name: Security
+  slug: security
+  glyph: fa fa-lock
+  col: 2
