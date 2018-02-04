@@ -5,7 +5,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">{% if page.url == "/" %}
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>{% if site.register-web == 2 %}
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>{% if site.register-web %}
             <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>{% endif %}
             <li class="nav-item"><a class="nav-link" href="#server-features">Server Features</a></li>
                 <nav class="nav nav-pills flex-column" style="display:none;">
@@ -16,7 +16,10 @@
                 </nav>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>{% endif %}
-          {% if site.register-web >= 1 %}
+          {% if site.register-web == 2 and page.url != "/" %}
+          <a href="/register" class="btn btn-success">Register</a>
+          {% endif %}
+          {% if site.register-web == 1 %}
           <a href="/register" class="btn btn-success">Register</a>
           {% endif %}
         </div>
