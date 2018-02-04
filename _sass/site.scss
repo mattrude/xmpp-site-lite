@@ -146,8 +146,9 @@ pre {
 }
 #register {
     #feature-register {
-        background-color:#eee;
-        padding:60px 0;
+        background-color: #eee;
+        padding-top: 40px;
+        padding-bottom: 20px;
     }
 }
 
@@ -234,7 +235,7 @@ pre {
 #register-window {
     .card {
         margin-left: 25px;
-        min-height: unset;
+        min-height: 472px;
         margin-bottom: unset;
     }
 
