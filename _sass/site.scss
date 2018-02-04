@@ -156,9 +156,6 @@ a:hover {
         background: transparent!important;
         width: 100%
     }
-    .section-header {
-        padding-bottom: 25px;
-    }
     .nav-pills .nav-link {
         border-radius: 0;
     }
@@ -172,7 +169,11 @@ a:hover {
     }
 }
 
-
+#server-features-content {
+    .section-header {
+        padding-bottom: 25px;
+    }
+}
 // New User Guide
 
 .section-header-nug {
