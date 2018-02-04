@@ -220,6 +220,15 @@ pre {
     padding: 2rem;
 }
 
+#cert-table {
+    h2 {
+        display: inline;
+    }
+    p {
+        float: right;
+    }
+}
+
 #register-window {
     .card {
         margin-left: 25px;
