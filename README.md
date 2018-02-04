@@ -2,127 +2,137 @@
 
 [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](http://github.com/mattrude/xmpp-site-lite)
 
-This is the website for [Matt Rude](https://mattrude.com)'s XMPP service.  This site may be loaded via the [xmpp-site-builder](https://code.mattrude.com/xmpp-site-builder/) repository.
+This is the website for a XMPP service.
 
-## Jekyll
+### Site Components 
 
-[Jekyll](http://jekyllrb.com/) is a static site generator built in [Ruby on Rails](http://rubyonrails.org/). With this approach, you are able to build a high power build site, using a low power, very stable webserver running a static site.
+* [Bootstrap 4.0](https://getbootstrap.com/) (via CDN)
 
-Jekyll is not needed on the webserver, updates must be done by a build system, from this source repository, then sent to the webserver.
+## Installing Site
 
-### Updating the site
+Installing this site is no diffrent then installing anyother [Jekyll](https://jekyllrb.com/) site.  You will need to download the source and compile it.  The compiled output will be the full HTML output.
 
-First change into the source directory of the site, once in, update via
+### 1. Clone the site
 
-    jekyll build
+    git clone https://github.com/mattrude/xmpp-site-lite.git
+    cd xmpp-site-lite
 
-A simple script would be
+### 2. Update Dependencies
 
-    rm -rf /var/src/xmpp-site && mkdir -p /var/src/ && \
-    git clone http://code.mattrude.com/git/xmpp-site-lite /var/src/xmpp-site-lite -q && \
-    cd /var/src/xmpp-site-lite && jekyll build -q
+    bundler update
 
-## Installing the server
+### 3. Build the site
 
-### Nginx Configuration
+    bundle exec jekyll build
 
-    #----------------------------------------------------------------------
-    # therudes.im XMPP Service
-    #----------------------------------------------------------------------
+### Setting up the Webserver
 
-    server {
-        listen 443 ssl http2;
-        listen [::]:443 ssl http2;
-        root /var/www/therudes.im;
-        server_name therudes.im;
+#### Nginx Configuration
 
-        ssl_certificate         /var/www/openssl/certs/therudes_im.crt;
-        ssl_certificate_key     /var/www/openssl/private/therudes_im.key;
-
-        location /favicon.ico { alias /var/www/therudes.im/img/favicon.ico; }
-        error_page 404 /404/index.html;
-
-        location /pastebin/ {
-            proxy_pass          http://conference.therudes.com:5280;
-        }
-
-        location /status {
-            proxy_pass          http://therudes.com:5280;
-        }
-    }
-     
-    server {
-        listen 443 ssl http2;
-        listen [::]:443 ssl http2;
-        root /var/www/therudes.im;
-        server_name conference.therudes.im;
-
-        ssl_certificate         /var/www/openssl/certs/conference_therudes_im.crt;
-        ssl_certificate_key     /var/www/openssl/private/conference_therudes_im.key;
-
-        location /favicon.ico { alias /var/www/therudes.im/img/favicon.ico; }
-        error_page 404 /404/index.html;
-
-        location /pastebin/ {
-            proxy_pass          http://conference.therudes.com:5280;
-        }
-
-        location /status {
-            proxy_pass          http://therudes.com:5280;
-        }
-    }
-    
     server {
         listen 80;
         listen [::]:80;
-        root /var/www/therudes.im;
-        server_name therudes.im;
-        server_name conference.therudes.im;
+        server_name im.example.com;
+        server_name conference.example.com;
+        server_name proxy.example.com;
+        server_name pubsub.example.com;
+        server_name upload.example.com;
+        error_log off;
 
-        location /favicon.ico { alias /var/www/therudes.im/img/favicon.ico; }
-        error_page 404 /404/index.html;
-
-        location /pastebin/ {
-            proxy_pass          http://conference.therudes.com:5280;
+        location '/.well-known/acme-challenge' {
+            default_type "text/plain";
+            root /var/www/im.example.com;
         }
 
-        location /status {
-            proxy_pass          http://therudes.com:5280;
+        location / {
+            return              301 https://$server_name$request_uri;
         }
     }
 
-### Installing Jekyll
-Since Jekyll only needs to be installed on your build system. Below are a few quick how-to's how setting up your build system.
+    server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+        server_name im.example.com;
+        server_name conference.example.com;
+        server_name upload.example.com;
+        root /var/www/im.example.com;
+        index index.html;
+        error_log off;
 
-#### Installing Ruby on Ubuntu
-On Ubuntu 14.04 LTS, you first need ruby installed on your setup, we will also install the development kit.
+        ssl_certificate         /etc/letsencrypt/live/im.example.com/fullchain.pem;
+        ssl_certificate_key     /etc/letsencrypt/live/im.example.com/privkey.pem;
+        ssl_stapling on;
 
-    apt-get update; apt-get install -y git g++ ruby ruby-dev
+        error_page 404 /404.html;
 
-Next install the needed gems and Jekyll
+        location /upload {
+            proxy_pass http://upload.example.com:5280/upload;
+            proxy_set_header Host upload.example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
 
-    gem install rails
-    gem install rouge
-    gem install kramdown
-    gem install therubyracer
-    gem install jekyll
-    gem install jekyll-press
-    gem install jekyll-sitemap
-    gem install jekyll-less
-    gem install jekyll-redirect-from
-    gem install jekyll-last-modified-at
+        location /pastebin {
+            proxy_pass http://conference.example.com:5280;
+            proxy_set_header Host conference.example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
 
-Now you may use Jekyll to build the site, using the source provided in this repository.
+        location /admin {
+            proxy_pass http://im.example.com:5280/admin/;
+            proxy_set_header Host example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
 
-#### Installing Ruby on Windows
-First start out by downloading the current production version of the [Ruby Installer](http://rubyinstaller.org/downloads/) for windows.
+        location /log {
+            proxy_pass http://conference.example.com:5280/muc_log/;
+            proxy_set_header Host conference.example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
 
-##### Installing the Ruby Development Kit
-After installing Ruby via the [Ruby Installer](http://rubyinstaller.org/downloads/) talked about above, you must now download the Development Kit.
+        location /http-bind {
+            proxy_pass http://im.example.com:5280/http-bind;
+            proxy_set_header Host example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
 
-1. Download the Development Kit from http://rubyinstaller.org/downloads/
-1. Extract the contact into a location easy accessible to your command prompt.
-1. Open a command prompt, change into the directory that you extracted the content of the Development Kit to and run the command: `rake devkit sfx=1`.
+        location /status {
+            proxy_pass http://im.example.com:5280/status;
+            proxy_set_header Host example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
+
+        location /register {
+            proxy_pass http://localhost:5280/register_web;
+            proxy_set_header Host im.example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
+
+        location /register_web {
+            proxy_pass http://localhost:5280/register_web;
+            proxy_set_header Host im.example.com;
+            proxy_buffering off;
+            tcp_nodelay on;
+        }
+
+        location ~* /files {
+            return 404;
+        }
+
+        location ~* \.(?:css|ico|js|jpeg|jpg)$ {
+            expires 1y;
+            add_header Cache-Control "public";
+        }
+
+        location / {
+        }
+    }
 
 ## License
 
