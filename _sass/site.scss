@@ -187,6 +187,21 @@ pre {
     .section-header {
         padding-bottom: 25px;
     }
+    #sections {
+        min-height: 130px;
+        #link {
+            color: #212529;
+        }
+        #link:hover + #name {
+            display: block;
+        }
+        #name {
+            display: none;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
 }
 // New User Guide
 
@@ -234,7 +249,7 @@ pre {
 }
 
 .index-section {
-  padding: 100px 0 40px;
+  padding: 100px 0 80px;
 }
 
 .index-section-last {
@@ -251,10 +266,6 @@ pre {
 
 .site-title h1 {
   font-size: 4em;
-}
-
-.feature-section {
-  padding-bottom: 40px;
 }
 
 #accordion {
