@@ -1,8 +1,10 @@
 - name: Mobile
   slug: mobile
+  icon: fa-mobile
 
 - name: Destop/Laptop
   slug: desktop
+  icon: fa-desktop
 
 #- name: Server
 #  slug: server

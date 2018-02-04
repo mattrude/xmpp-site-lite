@@ -48,7 +48,7 @@
 
 - name: Security
   section: security
-  text: <ul><li>SSL/TLS encryption is <a href="https://github.com/stpeter/manifesto/blob/master/manifesto.txt">required</a> between clients and servers (C2S) and server to server (S2S) connections</li><li>The backend is configured to store hashed and salted authentication data</li><li>Use <a href="https://conversations.im/omemo/">OMEMO</a> or <a href="{{ site.url }}/help/definitions/#otr">Off-the-Record (OTR)</a> in your chat client to have fully encrypted chats</li></ul>
+  text: <ul><li>SSL/TLS encryption is <a href="https://github.com/stpeter/manifesto/blob/master/manifesto.txt">required</a> between clients and servers (C2S) and server to server (S2S) connections</li><li>The backend is configured to store hashed and salted authentication data</li><li>Use <a href="https://conversations.im/omemo/">OMEMO</a> or <a href="https://otr.cypherpunks.ca/">Off-the-Record (OTR)</a> in your chat client to have fully encrypted chats</li><li>You may also validate the servers <a href="/certificates/">TLS Certificates</a>.</li></ul>
 
 - name: Policies
   section: security

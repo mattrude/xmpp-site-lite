@@ -4,11 +4,23 @@ title: XMPP Client List
 permalink: /clients/
 ---
 
-<h1>XMPP Client List</h1>
+
+        <div class="jumbotron">
+            <div class="row">
+            <div class="col-md-4">
+                <center><span class="fa fa-cloud-download" style="font-size:100px;" aria-hidden="true"></span></center>
+            </div>
+            <div class="col-md-8 float-md-right site-title">
+                <h1>XMPP Client List</h1>
+            </div>
+            </div>
+        </div>
+
 
 <div class="container offsetanchor" id="clients">
     {% for type in site.data.clienttypes %}
-    <center><h2 style="padding:20px 0;font-size:3em;">{{ type.name }}</h2></center>
+    <hr class="my-4">
+    <center><span class="fa {{ type.icon }}" style="font-size:100px;padding-top:70px;" aria-hidden="true"></span><h2 style="padding:20px 0;font-size:3em;">{{ type.name }}</h2></center>
     <div class="row">
         <div class="client-{{ type.slug }}">
             <div class="row">
@@ -20,7 +32,7 @@ permalink: /clients/
                         <img class="card-img-top" src="{{ site.url }}/assets/img/clients/{{ client.img }}"/>
                         {% endif %}
                         <div class="card-body">
-                            <h3 class="card-title">{{ client.name }}</h3>
+                            <center><h3 class="card-title">{{ client.name }}</h3></center>
                             <ul class="list-group-flush card-text" style="padding-left:unset;">
                                 <li class="list-group-item"><b>Platform:</b> {{ client.platform }}</li>
                                 <li class="list-group-item"><b>Encryption:</b> {{ client.encryption }}</li>

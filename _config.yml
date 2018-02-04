@@ -39,17 +39,20 @@ xep-0387: 1 # XMPP Compliance Suites 2017
 
 fingerprints: 1
 fingerprint-expires: "Apr 30 00:01:14 2018 GMT"
+fingerprint-im-expires: "Mar 11 07:10:22 2018 GMT"
 fingerprint-conference-expires: "Mar 11 07:10:22 2018 GMT"
 fingerprint-proxy-expires: "Mar 11 07:10:22 2018 GMT"
-fingerprint-proxy-expires: "Mar 11 07:10:22 2018 GMT"
+fingerprint-upload-expires: "Mar 11 07:10:22 2018 GMT"
 fingerprint-sha1: "5E:F9:B5:77:C3:26:3F:E5:A7:D0:33:65:EC:DC:7E:D2:20:26:1B:D4"
 fingerprint-sha256: "8F:7D:29:8D:95:A7:87:32:49:13:CB:9C:38:46:6D:7A:AD:D0:B3:DD:78:A2:38:72:52:AE:75:7C:81:31:44:EF"
+fingerprint-im-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
+fingerprint-im-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
 fingerprint-conference-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
 fingerprint-conference-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
 fingerprint-proxy-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
 fingerprint-proxy-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
-fingerprint-proxy-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
-fingerprint-proxy-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
+fingerprint-upload-sha1: "FB:26:68:13:7E:B4:A8:E1:88:EF:5C:DD:74:D5:52:58:46:16:61:D4"
+fingerprint-upload-sha256: "23:4F:C1:82:71:CE:24:47:64:E9:EE:A2:75:5B:0A:D4:78:45:F3:B3:24:25:47:9E:D3:A2:D3:B5:FC:08:EB:D8"
 
 # Analytics settings
 #google_analytics_id: UA-9532791-9
