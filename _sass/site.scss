@@ -138,10 +138,12 @@ pre {
 
 // Index Page
 
-#opening-side {
-    margin:0 auto 25px;
+#opening {
+    margin-bottom: 25px;
+    #opening-side {
+        margin:auto;
+    }
 }
-
 #register {
     #feature-register {
         background-color:#eee;
