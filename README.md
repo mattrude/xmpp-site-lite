@@ -25,7 +25,7 @@ Installing this site is no diffrent then installing anyother [Jekyll](https://je
 
     bundle exec jekyll build
 
-### Setting up the Webserver
+### 4. Setting up the Webserver
 
 #### Nginx Configuration
 
