@@ -1,4 +1,4 @@
-- name: Archiving/Storage
+- name: Archiving / Storage
   slug: history
   glyph: fa fa-floppy-o
   color: 9FCF6C

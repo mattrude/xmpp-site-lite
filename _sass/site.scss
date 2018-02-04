@@ -308,7 +308,7 @@ pre {
 }
 
 .contact-list {
-  font-size:2em;
+  font-size: 3em;
   text-align: center;
   padding: unset;
 }
@@ -349,6 +349,9 @@ td.FAILED {
   }
   .client-mobile h4 {
       font-size: 1.3rem;
+  }
+  #server-features-index {
+      display: none;
   }
 }
 

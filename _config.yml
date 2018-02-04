@@ -77,5 +77,8 @@ plugins:
 - jekyll-sitemap
 #- jekyll-minifier
 
+sass:
+    style: compressed
+
 jekyll-minifier:
-  exclude: 'robots.txt, contact.txt, contact-ecc.txt'
+    exclude: 'robots.txt, contact.txt, contact-ecc.txt'

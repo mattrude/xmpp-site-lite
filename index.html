@@ -77,7 +77,7 @@ permalink: /
 <div id="server-features" class="container-fluid">
     <div class="row justify-content">
         <!-- Starting the page index nav menu -->
-        <div id="server-features-index" class="col-2">
+        <div id="server-features-index" class="col-2 hidden-sm-down">
             <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:50px;margin-top:-50px;">
                 <nav id="nav-body" class="nav nav-pills flex-column bg-light">
                     <nav class="nav nav-pills flex-column">
@@ -94,7 +94,7 @@ permalink: /
         <!-- Ending the page index nav menu -->
 
         <!-- Starting the content section of the page -->
-        <div id="server-features-content" class="col-10" style="padding-right:unset;">
+        <div id="server-features-content" class="col-sm-10" style="padding-right:unset;">
            <div id="features" class="index-section feature-section" style="min-height:400px;margin-left:-23%;padding-left:23%;background-color: rgba(0, 0, 0, 0.1);">
                <div class="container offsetanchor">
                    <div class="section-header" id="features-section">
@@ -143,7 +143,7 @@ permalink: /
                            <p>{{ section.text }}</p>
                            {% for feature in site.data.features %}
                            {% if feature.section == section.slug %}
-                           <div class="{% if section.col == 3 %}col-md-4 col-sm-6{% else %}col-6{% endif %}" style="min-height:280px;">
+                           <div class="{% if section.col == 3 %}col-md-4{% else %}col-sm-6{% endif %}" style="min-height:280px;">
                                <h3>{{ feature.name }}</h3>
                                    <p>{{ feature.text }}</p>
                            </div>
