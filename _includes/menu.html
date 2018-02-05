@@ -13,19 +13,16 @@
                     {% for section in site.data.sections %}
                     <a class="nav-link ml-3 my-1" href="#{{ section.slug }}">{{ section.name }}</a>
                     {% endfor %}
-                </nav>
+                </nav>{% if site.user-guide == 1 %}
             <li class="nav-item"><a class="nav-link" href="#nug-opening">User Guide</a></li>
                 <nav class="nav nav-pills flex-column" style="display:none;">
                     {% for sectionnug in site.data.nug-sections %}
                     <a class="nav-link ml-3 my-1" href="#{{ sectionnug.slug }}">{{ sectionnug.name }}</a>
                     {% endfor %}
-                </nav>
+                </nav>{% endif %}
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>{% endif %}
-          {% if site.register-web == 2 and page.url != "/" %}
-          <a href="/register" class="btn btn-success">Register</a>
-          {% endif %}
-          {% if site.register-web == 1 %}
+          {% if site.register-web >= 2 %}
           <a href="/register" class="btn btn-success">Register</a>
           {% endif %}
         </div>

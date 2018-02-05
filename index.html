@@ -155,11 +155,15 @@ permalink: /
     </div> <!-- Closing the row justify-content clases -->
 </div> <!-- Closing the ID creating-account and the main container class -->
 
+{% if site.user-guide == 1 %}
+
 <!-- New User Guide Section -->
 
 {% include new_user_guide.html %}
 
 <!-- End of New User Guide Section -->
+
+{% endif %}
 
 <!-- About Section -->
 

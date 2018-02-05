@@ -26,8 +26,13 @@ html {
 
 body {
   position: relative;
+  font-family: 'Encode Sans Expanded', sans-serif;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
 
 // Links
 
@@ -216,6 +221,7 @@ pre {
     #nug-opening {
         min-height:400px;
         width: 100%;
+        padding-top: 80px;
         span {
             font-size: 100px;
         }
@@ -228,6 +234,15 @@ pre {
     .index-section {
         margin-right: -20%;
         padding-right: 20%;
+    }
+    .card {
+        background-color: rgba(0,0,0,0.2);
+        a {
+            color: #fff;
+        }
+    }
+    .list-group-item {
+        background-color: unset; 
     }
 }
 

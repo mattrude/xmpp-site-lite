@@ -1,21 +1,21 @@
 <div id="nug" class="container-fluid">
     <div class="row justify-content">
-            <div id="nug-opening" class="feature-section">
-                <div class="container offsetanchor">
-                    <div class="section-header" id="features-section">
-                        <center>
-                            <span class="fa fa-user"aria-hidden="true"></span>
-                            <h2>New User Guide</h2>
-                        </center>
-                    </div>
-                    <div id="feature-heading-content">
-                        <hr class="my-4">
-                        <blockquote class="blockquote">
-                            <p class="mb-0"></p>
-                        </blockquote>
-                    </div>
+        <div id="nug-opening" class="feature-section">
+            <div class="container offsetanchor">
+                <div class="section-header" id="features-section">
+                    <center>
+                        <span class="fa fa-user"aria-hidden="true"></span>
+                        <h2>New User Guide</h2>
+                    </center>
+                </div>
+                <div id="feature-heading-content">
+                    <hr class="my-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0"></p>
+                    </blockquote>
                 </div>
             </div>
+        </div>
 
         <!-- Starting the content section of the page -->
         <div id="nug-content" class="col-sm-10">
@@ -32,14 +32,7 @@
                    <div class="feature-{{ section.slug }}">
                        <div class="row">
                            <p>{{ section.text }}</p>
-                           {% for feature in site.data.features %}
-                           {% if feature.section == section.slug %}
-                           <div class="{% if section.col == 3 %}col-md-4{% else %}col-sm-6{% endif %}" style="min-height:280px;">
-                               <h3>{{ feature.name }}</h3>
-                               <p>{{ feature.text }}</p>
-                           </div>
-                           {% endif %}
-                           {% endfor %}
+                           {% include {{ section.file }} %}
                        </div>
                    </div>
                </div>
@@ -53,11 +46,11 @@
             <nav id="navbar-main" class="sticky-top navbar navbar-light" style="padding-top:50px;margin-top:-50px;">
                 <nav id="nug-nav-body" class="nav nav-pills flex-column">
                     <a id="features-index" href="#nug-opening" style="color:#000;line-height:50px;text-align:center;font-size:1.3rem;"><b>User Guide</b></a>
-                    {% for section in site.data.nug-sections %}
                     <nav class="nav nav-pills flex-column nav-item align-middle">
+                    {% for section in site.data.nug-sections %}
                         <a class="nav-link ml-3 my-1" href="#{{ section.slug }}"><span id="nug-index-span">{{ section.name }}</span></a>
-                    </nav>
                     {% endfor %}
+                    </nav>
                 </nav>
             </nav>
         </div>

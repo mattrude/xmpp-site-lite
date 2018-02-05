@@ -8,6 +8,8 @@ baseurl: "soderparr.com"
 destination: "/var/www/im.soderparr.com"
 prosody-version: "0.10"
 register-web: 2
+password-reset: 1
+user-guide: 0
 color: "#9FCF6C"
 #color: "#c3950d"
 recaptcha_public_key: "6LdJkzUUAAAAAFj3M0bgNhwzoPuPoiYdlbVaWBf-"
