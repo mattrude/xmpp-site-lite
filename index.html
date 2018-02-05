@@ -51,6 +51,7 @@ permalink: /
                 <li>File Uploads: <b>{{ site.xmpp-upload-url }}</b></li>{% endif %}
             </ul>
             <div style="padding-left:40px;"><a href="https://check.messaging.one/result.php?domain={{ site.xmpp-url }}&amp;type=server" target="_blank"><img src="https://check.messaging.one/badge.php?domain={{ site.xmpp-url }}" alt="check.messaging.one server score"/></a></div>
+
         </div>
     </div>
 </div>
@@ -67,7 +68,6 @@ permalink: /
     </div>
 </div>
 {% endif %}
-
 
 <div id="server-features" class="container-fluid">
     <div class="row justify-content">
@@ -154,6 +154,12 @@ permalink: /
 
     </div> <!-- Closing the row justify-content clases -->
 </div> <!-- Closing the ID creating-account and the main container class -->
+
+<!-- New User Guide Section -->
+
+{% include new_user_guide.html %}
+
+<!-- End of New User Guide Section -->
 
 <!-- About Section -->
 

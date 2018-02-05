@@ -14,6 +14,12 @@
                     <a class="nav-link ml-3 my-1" href="#{{ section.slug }}">{{ section.name }}</a>
                     {% endfor %}
                 </nav>
+            <li class="nav-item"><a class="nav-link" href="#nug-opening">User Guide</a></li>
+                <nav class="nav nav-pills flex-column" style="display:none;">
+                    {% for sectionnug in site.data.nug-sections %}
+                    <a class="nav-link ml-3 my-1" href="#{{ sectionnug.slug }}">{{ sectionnug.name }}</a>
+                    {% endfor %}
+                </nav>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>{% endif %}
           {% if site.register-web == 2 and page.url != "/" %}

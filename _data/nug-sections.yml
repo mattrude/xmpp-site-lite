@@ -1,0 +1,16 @@
+- name: Download a Client
+  slug: nug-download
+  glyph: fa fa-cloud-download
+  color: 9FCF6C
+  file: nug-download.html
+
+- name: Register an Account
+  slug: nug-register
+  glyph: fa fa-user
+  file: nug-register.html
+
+- name: Connect your Account 
+  slug: nug-connect
+  glyph: fa fa-mobile
+  color: E66E20
+  file: nug-connect.html

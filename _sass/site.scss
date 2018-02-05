@@ -28,6 +28,7 @@ body {
   position: relative;
 }
 
+
 // Links
 
 a {
@@ -208,6 +209,55 @@ pre {
 }
 // New User Guide
 
+#nug {
+    #nug-content {
+        padding: unset;
+    }
+    #nug-opening {
+        min-height:400px;
+        width: 100%;
+        span {
+            font-size: 100px;
+        }
+    }
+    .nug-feature-section {
+    }
+    #nug-nav-body {
+        width: 100%;
+    }
+    .index-section {
+        margin-right: -20%;
+        padding-right: 20%;
+    }
+}
+
+#nug-index {
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+    #navbar-main {
+        padding: 80px 0 0 0;
+        margin-top: -80px;
+        background: transparent!important;
+    }
+    #nav-body {
+        color: black;
+        background: transparent!important;
+        width: 100%
+    }
+    .nav-pills .nav-link {
+        border-radius: 0;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    a {
+        color:black;
+        margin: unset!important;
+    }
+}
+
 .section-header-nug {
     padding-top: 60px;
 }
@@ -336,11 +386,6 @@ td.FAILED {
 
 #definitions h2 {
     padding-top: 60px;
-}
-
-.nav-item a {
-    padding: 0 10px;
-    color: #fff;
 }
 
 @media (max-width: 990px) {
