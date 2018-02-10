@@ -1,18 +1,17 @@
-            <div id="register-window" class="mainbox">
+            <div id="register-window" class="mainbox col-md-4 col-sm-8 col-sx-offset-2">
                 <div class="row">
                     <div class="card">
                         <div class="panel-heading">
                             <div class="panel-title"><center><h4>Registration Form</h4></center></div>
                         </div>
                         <div class="panel-body" style="margin-bottom: 15px;">
-                            <h3 class="text-center text-danger" style="margin-top:0px;">{notice}</h3>
                             <form action="{{ site.url }}/register/" method="post" class="form-horizontal needs-validation" style="padding: 15px;" novalidate>
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                     <div class="input-group">
                                         <input type="text" class="form-control" name="username" placeholder="Username" id="username" required />
                                         <div class="input-group-append">
-                                            <span class="input-group-text" style="font-size:0.8em;font-weight:bold;">@{hostname}</span>
+                                            <span class="input-group-text" style="font-size:0.8em;font-weight:bold;">@{{ site.xmpp-url }}</span>
                                         </div>
                                         <div class="invalid-feedback" style="width: 100%;">Your username is required.</div>
                                     </div>
@@ -36,8 +35,29 @@
                                         <div class="invalid-feedback" style="width: 100%;">Your email address is required.</div>
                                     </div>
                                 </div>
-                                <div style="margin-bottom:25px;margin:0 auto;" class="input-group test">
-                                    {captcha}
+                                <div style="margin-bottom:25px;margin:0 auto;min-height:78px;" class="input-group test">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_public_key }}" style="transform:scale(0.88);-webkit-transform:scale(0.88);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+    <noscript>
+      <div style="width: 261px; height: 352px;">
+        <div style="width: 261px; height: 352px; position: relative;">
+          <div style="width: 261px; height: 352px; position: absolute;">
+            <iframe src="https://www.google.com/recaptcha/api/fallback?k={recaptcha_public_key}"
+                    frameborder="0" scrolling="no"
+                    style="width: 261px; height:352px; border-style: none;">
+            </iframe>
+          </div>
+          <div style="width: 250px; height: 80px; position: absolute; border-style: none;
+                      bottom: 21px; left: 25px; margin: 0px; padding: 0px; right: 25px;">
+            <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                      class="g-recaptcha-response"
+                      style="width: 250px; height: 80px; border: 1px solid #c1c1c1;
+                             margin: 0px; padding: 0px; resize: none;" value="">
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </noscript>
                                 </div>
                                 <div style="margin-top:15px;margin-bottom:0;" class="form-group">
                                     <div class="col-sm-12 controls">
@@ -46,6 +66,12 @@
                                     </div>
                                 </div>
                             </form>
+                            <div id="reset-password-link" style="float:right;padding:10px 30px 0 0;">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal" class="float-right">Reset Password</a>
+                            </div>
                         </div>
                     </div>
+<!-- Before Password Reset -->
+            {% include password-reset.html %}
+<!-- After Password Reset -->
                 </div>
