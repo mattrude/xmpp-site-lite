@@ -72,16 +72,14 @@ exclude:
 - README.md
 - CONTRIBUTING.md
 - LICENSE
-- css/syntax.less
-- css/site.less
-- css/small.less
 
 plugins:
 - jekyll-sitemap
-#- jekyll-minifier
+- jekyll-minifier
 
 sass:
-    style: compressed
+  style: compressed
 
 jekyll-minifier:
-    exclude: 'robots.txt, contact.txt, contact-ecc.txt'
+  exclude:
+  - robots.txt
