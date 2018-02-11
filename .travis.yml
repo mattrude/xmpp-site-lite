@@ -1,0 +1,14 @@
+language: ruby
+sudo: false
+before_install:
+  - gem install rouge
+  - gem install json
+  - gem install bundler
+  - gem install kramdown
+  - gem install therubyracer
+  - gem install jekyll
+install: bundle install
+script: bundle exec jekyll build -d _site && bundle exec htmlproofer htmlproofer --internal-domains "im.soderparr.com" ./_site
+rvm:
+  - 2.2.0
+  - 2.3.1
