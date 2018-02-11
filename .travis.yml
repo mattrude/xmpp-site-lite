@@ -7,7 +7,7 @@ before_install:
   - gem install kramdown
   - gem install therubyracer
   - gem install jekyll
-  - gem install htmlproofer
+  - gem install html-proofer
 install: bundle install
 script: bundle exec jekyll build -d _site && bundle exec htmlproofer htmlproofer --internal-domains "im.soderparr.com" ./_site
 rvm:
