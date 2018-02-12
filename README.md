@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mattrude/xmpp-site-lite.svg?branch=master)](https://travis-ci.org/mattrude/xmpp-site-lite) [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](http://github.com/mattrude/xmpp-site-lite)
 
-This is the website for a XMPP service.
+This is the website for the XMPP service at [soderparr.com](https://im.soderparr.com).
 
 ### Site Components 
 
@@ -14,12 +14,13 @@ Installing this site is no diffrent then installing anyother [Jekyll](https://je
 
 ### 1. Clone the site
 
+    apt update; apt -y install ruby bundler
     git clone https://github.com/mattrude/xmpp-site-lite.git
     cd xmpp-site-lite
 
 ### 2. Update Dependencies
 
-    bundler update
+    bundler install
 
 ### 3. Build the site
 
@@ -139,7 +140,7 @@ Installing this site is no diffrent then installing anyother [Jekyll](https://je
                   GNU GENERAL PUBLIC LICENSE
                     Version 3, 29 June 2007
 
-    mattrude.com XMPP Service Website for im.mattrude.com
+    soderparr.com XMPP Service Website for im.soderparr.com
     Copyright (C) 2012-2016 Matt Rude <matt@mattrude.com>
 
     This program is free software: you can redistribute it and/or modify
