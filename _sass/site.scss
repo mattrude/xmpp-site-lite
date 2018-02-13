@@ -293,9 +293,16 @@ pre {
 #cert-table {
     h2 {
         display: inline;
+        margin-bottom: 10px;
     }
     p {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    #date {
         float: right;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
 

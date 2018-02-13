@@ -21,7 +21,7 @@ permalink: /certificates/
 
 <div id="cert-table">
 <h2>{{ site.xmpp-url }}</h2>
-<p><small>(expires: {{ site.fingerprint-expires }})</small></p>
+<p id="date"><small>(expires: {{ site.fingerprint-expires }})</small></p>
 {% if site.fingerprint-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -41,7 +41,7 @@ permalink: /certificates/
   <hr class="my-4">
 {% if site.xmpp-host %}
 <h2>{{ site.xmpp-host }}</h2>
-<p><small>(expires: {{ site.fingerprint-im-expires }})</small></p>
+<p id="date"><small>(expires: {{ site.fingerprint-im-expires }})</small></p>
 {% if site.xmpp-host and site.fingerprint-im-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -62,7 +62,7 @@ permalink: /certificates/
 {% endif %}
 {% if site.xmpp-conference-url and site.xep-0045 == 1 %}
 <h2>{{ site.xmpp-conference-url }}</h2>
-<p><small>(expires: {{ site.fingerprint-conference-expires }})</small></p>
+<p id="date"><small>(expires: {{ site.fingerprint-conference-expires }})</small></p>
 {% if site.xmpp-conference-url and site.xep-0045 == 1 and site.fingerprint-conference-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -83,7 +83,7 @@ permalink: /certificates/
 {% endif %}
 {% if site.xmpp-proxy-url and site.xep-0065 == 1 %}
 <h2>{{ site.xmpp-proxy-url }}</h2>
-<p><small>(expires: {{ site.fingerprint-proxy-expires }})</small></p>
+<p id="date"><small>(expires: {{ site.fingerprint-proxy-expires }})</small></p>
 {% if site.xmpp-proxy-url and site.xep-0065 == 1 and site.fingerprint-proxy-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -104,7 +104,8 @@ permalink: /certificates/
 {% endif %}
 {% if site.xmpp-upload-url and site.xep-0363 == 1 %}
 <h2>{{ site.xmpp-upload-url }}</h2>
-<p><small>(expires: {{ site.fingerprint-upload-expires }})</small></p>
+<p id="date"><small>(expires: {{ site.fingerprint-upload-expires }})</small></p>
+<p>The <b>{{ site.xmpp-upload-url }}</b> domain is used for the HTTP File Upload (<a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a>), that allows a user to upload a file to the server, the server will then provide a URL link back to that file that anyone may view.</p>
 {% if site.xmpp-upload-url and site.xep-0363 == 1 and site.fingerprint-upload-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
