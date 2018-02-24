@@ -1,8 +1,10 @@
       <nav id="navbar-main" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="{{ site.url }}">XMPP Communication Service</a>
+        {% if site.register-web >= 1 %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        {% endif %}
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">{% if page.url == "/" %}
             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>{% if site.register-web == 2 %}
@@ -22,7 +24,7 @@
                 </nav>{% endif %}
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>{% endif %}
-          {% if site.register-web >= 2 %}
+          {% if site.register-web >= 1 %}
           <a href="/register" class="btn btn-success">Register</a>
           {% endif %}
         </div>
