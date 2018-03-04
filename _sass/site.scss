@@ -372,6 +372,12 @@ pre {
   font-size: 4em;
 }
 
+#clients {
+  li {
+      padding: 0.75rem 0;
+  }
+}
+
 #accordion {
   .card {
       min-height: unset;
