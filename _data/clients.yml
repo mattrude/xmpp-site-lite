@@ -32,7 +32,7 @@
   domain: dino.im
   url: https://dino.im
   img: dino_logo.svg
-  text:
+  text: Dino is a modern open-source chat client for the desktop. It focuses on providing a clean and reliable Jabber/XMPP experience while having your privacy in mind.
 
 - name: Gajim
   type: desktop
@@ -45,7 +45,7 @@
 
 - name: Swift
   type: desktop
-  platform: Linux / OSX / Windows
+  platform: OSX / Windows
   encryption: TLS
   domain: swift.im
   url: http://swift.im/
