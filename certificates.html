@@ -13,15 +13,16 @@ permalink: /certificates/
 
 <hr class="my-4">
 
-<p style="max-width:800px;text-align:center;margin:0 auto;">One of the benefits of communicating via XMPP is the level of security involved.  This server uses <a href="">DNSSEC</a> and TLS <a href="">Certificate Pinning</a>, to secure its users identity and privacy from outside observers.</p>
+<p style="max-width:800px;text-align:center;margin:0 auto;">One of the benefits of communicating via XMPP is the level of security you may implement on the connection to and from the server.  This server uses <a href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">DNSSEC</a> and <a href="">TLS Certificate Pinning</a>, to secure its users from diffrent <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MitM</a> attacks outside observers.</p>
 
-<p style="max-width:800px;text-align:center;margin:0 auto;">As an added layer of security, a user can validate the servers they are connecting to, below is the current fingerprints for each domain name.</p>
+<p style="max-width:800px;text-align:center;margin:0 auto;">As an added layer of security, a user may validate this servers TLS Certificates, below is the current fingerprints for each domain name you may use.</p>
 
 <hr class="my-4">
 
 <div id="cert-table">
 <h2>{{ site.xmpp-url }}</h2>
 <p id="date"><small>(expires: {{ site.fingerprint-expires }})</small></p>
+<p>This is the primary certificate that your client will use during its XMPP connection.</p>
 {% if site.fingerprint-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -42,6 +43,7 @@ permalink: /certificates/
 {% if site.xmpp-host %}
 <h2>{{ site.xmpp-host }}</h2>
 <p id="date"><small>(expires: {{ site.fingerprint-im-expires }})</small></p>
+<p>This is the certificate and domain that you are currently using to view this webpage; it is used for most website services.  This is also used during some XMPP connection attempts.</p>
 {% if site.xmpp-host and site.fingerprint-im-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -63,6 +65,7 @@ permalink: /certificates/
 {% if site.xmpp-conference-url and site.xep-0045 == 1 %}
 <h2>{{ site.xmpp-conference-url }}</h2>
 <p id="date"><small>(expires: {{ site.fingerprint-conference-expires }})</small></p>
+<p>The conference domain at {{ site.xmpp-conference-url }} is used for all <a href="https://xmpp.org/extensions/xep-0045.html">MUC</a> (conference services) within your client.</p>
 {% if site.xmpp-conference-url and site.xep-0045 == 1 and site.fingerprint-conference-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>
@@ -126,4 +129,3 @@ permalink: /certificates/
 </div> <!-- Closing cert-table id div -->
 
 <p style='text-align:right;'><a href="https://check.messaging.one/result.php?domain={{ site.xmpp-url }}&amp;type=server"><img src="https://check.messaging.one/badge.php?domain={{ site.xmpp-url }}" alt="check.messaging.one server score" /></a></p>
-
