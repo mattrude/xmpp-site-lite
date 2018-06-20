@@ -6,7 +6,8 @@ This is the website for the XMPP service at [soderparr.com](https://im.soderparr
 
 ### Site Components 
 
-* [Bootstrap 4.0](https://getbootstrap.com/) (via CDN)
+* [Bootstrap 4.0.0](https://getbootstrap.com/) via [assets/bootstrap/4.0.0/](https://github.com/mattrude/xmpp-site-lite/tree/master/assets/bootstrap/4.0.0)
+* [jQuery 3.2.1](https://jquery.com/) via [assets/jquery/3.2.1/](https://github.com/mattrude/xmpp-site-lite/tree/master/assets/jquery/3.2.1/js)
 
 ## Installing Site
 
