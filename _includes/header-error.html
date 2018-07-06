@@ -1,0 +1,16 @@
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}{% endif %}
+    {% if page.tags %}<meta name="keywords" content="{{ page.tags }}">{% else %}{% endif %}
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="shortcut icon" href="/assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="/assets/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+</head>
+<body id="main" data-spy="scroll" data-target="#navbar-main">
