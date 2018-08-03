@@ -1,26 +1,25 @@
 <div id="nug" class="container-fluid">
     <div class="row justify-content">
-        <div id="nug-opening" class="feature-section">
-            <div class="container offsetanchor">
-                <div class="section-header" id="features-section">
-                    <center>
-                        <span class="fa fa-user"aria-hidden="true"></span>
-                        <h2>New User Guide</h2>
-                    </center>
-                </div>
-                <div id="feature-heading-content">
-                    <hr class="my-4">
-                    <p>This guide hopes to walk new users threw setting up and using XMPP.</p>
-                    <p>XMPP is not the simpliest why of chating, but its not difficalt to use either, once you have a server, it no harder then any other modern chat system.</p>
-                    <blockquote class="blockquote">
-                        <p class="mb-0"></p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-
         <!-- Starting the content section of the page -->
         <div id="nug-content" class="col-sm-10">
+            <div id="nug-opening" class="feature-section" style="background-color: rgba(0, 0, 0, 0.1);">
+                <div class="container offsetanchor">
+                    <div class="section-header" id="features-section">
+                        <center>
+                            <span class="fa fa-user"aria-hidden="true"></span>
+                            <h2>New User Guide</h2>
+                        </center>
+                    </div>
+                    <div id="feature-heading-content">
+                        <hr class="my-4">
+                        <p>This guide hopes to walk new users threw setting up and using XMPP.</p>
+                        <p>XMPP is not the simpliest why of chating, but its not difficalt to use either, once you have a server, it no harder then any other modern chat system.</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0"></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
             <!--  Site Features -->
             {% for section in site.data.nug-sections %}
             <div id="{{ section.slug }}" class="index-section nug-feature-section" style="background-color:#{{ section.color }};">
