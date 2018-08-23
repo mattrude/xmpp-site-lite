@@ -24,7 +24,7 @@
 
 - name: HTTP File Upload
   section: file
-  text: HTTP File Upload (<a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a>) allows a user to upload a file to the server, the server will then provide a URL link back to that file that anyone may view.</p><p>The max upload file size limit is currenly set at <b>100</b> MBytes, with a quota size of <b>1</b>Gb; files will be stored for <b>180</b> days.
+  text: HTTP File Upload (<a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a>) allows a user to upload a file to the server, the server will then provide a URL link back to that file that anyone may view.</p><p>The max upload file size limit is currenly set at <b>500</b> MBytes, with a quota size of <b>2</b> GBytes; files will be stored for <b>90</b> days.
 
 - name: File Transfer
   section: file
