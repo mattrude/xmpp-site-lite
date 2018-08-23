@@ -6,14 +6,15 @@ permalink: /assets/errors/404-upload.html
 
 <div id="error-container" class="container d-flex h-100">
     <div id="error-text" class="justify-content-center align-self-center">
+	<br />
         <h1><i class="fa fa-exclamation-triangle"></i></h1>
 	<h1 style="font-size:3.5em">Error: <b>404</b></h1>
 	<br />
         <h1>File not found!</h1>
 	<hr />
 	<p><b>Im sorry but the file you are looking for can not be found at this time.</b></p>
-	<p>The file may have expired before you tried to download it; files expire <b>180 days</b> after they are uploaded.</p>
+	<p>The file may have expired{% if site.ejabberd-upload-days %}; files expire <b>{{ site.ejabberd-upload-days }} days</b> after they are uploaded{% endif %}.</p>
 	<hr />
-	<p><small>Please see <a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a> for more information on XMPP HTTP_Upload service.</small></p>
+	<p><small>See <a href="https://xmpp.org/extensions/xep-0363.html">XEP-0363</a> for more information on using the XMPP HTTP_Upload service.</small></p>
     </div>
 </div>

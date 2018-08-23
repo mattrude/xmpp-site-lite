@@ -1,0 +1,19 @@
+---
+layout: error
+sitemap: false
+permalink: /assets/errors/index-upload.html
+---
+
+<div id="error-container" class="container d-flex h-100">
+    <div id="error-text" class="justify-content-center align-self-center">
+        <br />
+        <h1><i class="fa fa-exclamation-triangle"></i></h1>
+        <h1 style="font-size:3.5em">Error: <b>403</b></h1>
+        <br />
+        <h1>Web Browsing is not permitted</h1>
+        <hr />
+	<p>This domain ({{ site.xmpp-upload-url }}) is the frontend for the XMPP<br /><a href="https://xmpp.org/extensions/xep-0363.html">HTTP_Upload</a> service; running for the domain <a href="{{ site.url }}">{{ site.xmpp-url }}</a>.</p>
+        <hr />
+	<p><small>You must have an XMPP Account on the {{ site.xmpp-url }} domain inorder to use this service.</small></</p>
+    </div>
+</div>
