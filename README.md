@@ -142,7 +142,7 @@ Installing this site is no diffrent then installing anyother [Jekyll](https://je
                     Version 3, 29 June 2007
 
     soderparr.com XMPP Service Website for im.soderparr.com
-    Copyright (C) 2012-2016 Matt Rude <matt@mattrude.com>
+    Copyright (C) 2012-2019 Matt Rude <matt@mattrude.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
