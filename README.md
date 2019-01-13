@@ -1,6 +1,6 @@
 # Communication Service Website Source
 
-[![Build Status](https://travis-ci.org/mattrude/xmpp-site-lite.svg?branch=master)](https://travis-ci.org/mattrude/xmpp-site-lite) [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](http://github.com/mattrude/xmpp-site-lite)
+[![Build Status](https://travis-ci.org/mattrude/xmpp-site-lite.svg?branch=master)](https://travis-ci.org/mattrude/xmpp-site-lite) [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](http://github.com/mattrude/xmpp-site-lite)
 
 This is the website for the XMPP service at [soderparr.com](https://im.soderparr.com).
 
@@ -142,7 +142,7 @@ Installing this site is no diffrent then installing anyother [Jekyll](https://je
                     Version 3, 29 June 2007
 
     soderparr.com XMPP Service Website for im.soderparr.com
-    Copyright (C) 2012-2016 Matt Rude <matt@mattrude.com>
+    Copyright (C) 2012-2019 Matt Rude <matt@mattrude.com>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
