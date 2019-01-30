@@ -1,61 +1,53 @@
 ###########################################################################
 # XMPP Site Configuration
-title: soderparr.com Communication Service
-email: matt@mattrude.com
+
+title: "example.com Communication Service"
 description: ""
-url: "https://im.soderparr.com"
-name: "soderparr.com"
-baseurl: "soderparr.com"
-destination: "/var/www/im.soderparr.com"
-ejabberd-version: "18.12.78"
-ejabberd-gitversion: "23e5b3756c39df6028fdb38e57712016ba540a14"
-ejabberd-upload-days: "1825"
-ejabberd-upload-fsize: "1 GB"
+url: "https://im.example.com"
+name: "example.com"
+baseurl: "im.example.com"
+destination: "/var/www/im.example.com"
 
 owner-name: "Matt Rude"
 owner-pgpkey: "0xc4909ee495b0761f"
-owner-url: "https://mattrude.com/"
-owner-xmpp: "matt@mattrude.com"
-#owner-email: "matt@mattrude.com"
+owner-url: "https://example.com/"
+owner-xmpp: "matt@example.com"
 owner-twitter: "mdrude"
 owner-github: "mattrude"
 
-xmpp-url: "soderparr.com"  # The domain name of the XMPP service
-xmpp-host: "im.soderparr.com"
-xmpp-conference-url: "conference.soderparr.com" # The domain name of the conference XMPP service
-xmpp-proxy-url: "proxy.soderparr.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
-xmpp-upload-url: "upload.soderparr.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
-user-guide: 0
-server-features: 1
+xmpp-url: "example.com" # The XMPP domain url
+xmpp-host: "im.example.com" # The hostname of the server
+xmpp-conference-url: "conference.example.com" # Multi-User Chat xep-0045
+xmpp-proxy-url: "proxy.example.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
+xmpp-upload-url: "upload.example.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
 
-xep-0163: 1
-xep-0237: 0
-xep-0280: 1
-xep-0191: 1
-xep-0045: 1
-xep-0198: 1
-xep-0313: 1
-xep-0352: 1
-xep-0363: 1
-xep-0065: 1
-xep-0357: 1
+server-features: 1
+user-guide: 0
+
+###########################################################################
+# The below values should auto update
+
+ejabberd-version:
+ejabberd-gitversion:
+ejabberd-upload-days:
+ejabberd-upload-fsize:
 
 fingerprints: 1
-fingerprint-expires: "Apr 26 06:00:14 2019 GMT"
-fingerprint-im-expires: "Apr 27 11:07:20 2019 GMT"
-fingerprint-conference-expires: "Apr 27 11:07:20 2019 GMT"
-fingerprint-proxy-expires: "Apr 27 11:07:20 2019 GMT"
-fingerprint-upload-expires: "Apr 27 11:07:20 2019 GMT"
-fingerprint-sha1: "5D:2D:B4:E8:75:99:B4:CB:A7:54:39:CE:05:D3:22:13:16:D0:AC:87"
-fingerprint-sha256: "21:79:97:B9:AA:8B:7B:F4:9C:58:2E:C7:42:37:70:C9:17:62:27:5E:79:61:F0:10:F3:CE:CA:6C:46:4D:D6:EA"
-fingerprint-im-sha1: "00:28:05:9F:D6:19:BB:21:E4:AB:E7:6B:52:33:5A:EF:56:F4:92:CE"
-fingerprint-im-sha256: "3B:A4:BB:68:45:D1:6C:21:AA:23:F6:7C:63:73:14:78:05:B8:71:25:64:F2:89:15:A5:15:00:FA:36:EA:36:E0"
-fingerprint-conference-sha1: "00:28:05:9F:D6:19:BB:21:E4:AB:E7:6B:52:33:5A:EF:56:F4:92:CE"
-fingerprint-conference-sha256: "3B:A4:BB:68:45:D1:6C:21:AA:23:F6:7C:63:73:14:78:05:B8:71:25:64:F2:89:15:A5:15:00:FA:36:EA:36:E0"
-fingerprint-proxy-sha1: "00:28:05:9F:D6:19:BB:21:E4:AB:E7:6B:52:33:5A:EF:56:F4:92:CE"
-fingerprint-proxy-sha256: "3B:A4:BB:68:45:D1:6C:21:AA:23:F6:7C:63:73:14:78:05:B8:71:25:64:F2:89:15:A5:15:00:FA:36:EA:36:E0"
-fingerprint-upload-sha1: "00:28:05:9F:D6:19:BB:21:E4:AB:E7:6B:52:33:5A:EF:56:F4:92:CE"
-fingerprint-upload-sha256: "3B:A4:BB:68:45:D1:6C:21:AA:23:F6:7C:63:73:14:78:05:B8:71:25:64:F2:89:15:A5:15:00:FA:36:EA:36:E0"
+fingerprint-expires: 
+fingerprint-im-expires:
+fingerprint-conference-expires:
+fingerprint-proxy-expires:
+fingerprint-upload-expires:
+fingerprint-sha1:
+fingerprint-sha256:
+fingerprint-im-sha1:
+fingerprint-im-sha256:
+fingerprint-conference-sha1:
+fingerprint-conference-sha256:
+fingerprint-proxy-sha1:
+fingerprint-proxy-sha256:
+fingerprint-upload-sha1:
+fingerprint-upload-sha256:
 
 # Analytics settings
 #google_analytics_id: UA-9532791-9
@@ -66,18 +58,24 @@ permalink: pretty
 highlighter: rouge
 date: YYYY-MM-DD HH:MM
 
-include: [".well-known"]
+include:
+- .well-known/host-meta
+
 exclude:
 - README.md
 - CONTRIBUTING.md
 - LICENSE
+- Gemfile
+- Gemfile.lock
 - css/syntax.less
 - css/site.less
 - css/small.less
+- site-updater.sh
+- update-site-certs.sh
 
 plugins:
 - jekyll-sitemap
-#- jekyll-press
+  #- jekyll-press
 
 jekyll-press:
   exclude: 'robots.txt, contact.txt, contact-ecc.txt' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
