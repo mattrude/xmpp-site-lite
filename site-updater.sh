@@ -11,11 +11,7 @@ for DOMAIN in ${DOMAINS}
 do
     cd ${DIR}
     rm -f current-config.yml
-    if [ "${DOMAIN}" != "mattrude.com" ]; then
-        sed "s/mattrude.com/${DOMAIN}/g" _config.yml |sed "s/matt@${DOMAIN}/matt@mattrude.com/g" > current-config.yml
-    else
-        cp _config.yml current-config.yml
-    fi
+    sed "s/example.com/${DOMAIN}/g" _config.yml |sed "s/matt@${DOMAIN}/matt@mattrude.com/g" > current-config.yml
     sed -i "s/^ejabberd-version.*/ejabberd-version: \"${VERSION}\"/g" current-config.yml
     sed -i "s/^ejabberd-gitversion.*/ejabberd-gitversion: \"${GITVERSION}\"/g" current-config.yml
     sed -i "s/^ejabberd-upload-days.*/ejabberd-upload-days: \"${UPLOADDAYS}\"/g" current-config.yml
@@ -29,7 +25,7 @@ do
         rm -rf /var/www/im.${DOMAIN} && \
         bundle exec jekyll build -c current-config.yml -q
     chown -R www-data:www-data /var/www/im.${DOMAIN}
-    rm -rf /var/www/im.${DOMAIN}/files
+    rm -rf /var/www/im.${DOMAIN}/files ${DIR}/current-config.yml
 done
 
 if [ -x /etc/ejabberd/bin/update-tlsa.sh ]; then /etc/ejabberd/bin/update-tlsa.sh; fi

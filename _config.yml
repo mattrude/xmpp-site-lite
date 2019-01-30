@@ -10,8 +10,8 @@ destination: "/var/www/im.example.com"
 
 owner-name: "Matt Rude"
 owner-pgpkey: "0xc4909ee495b0761f"
-owner-url: "https://example.com/"
-owner-xmpp: "matt@example.com"
+owner-url: "https://mattrude.com/"
+owner-xmpp: "matt@mattrude.com"
 owner-twitter: "mdrude"
 owner-github: "mattrude"
 
