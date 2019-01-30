@@ -87,6 +87,7 @@ permalink: /certificates/
 {% if site.xmpp-proxy-url and site.xep-0065 == 1 %}
 <h2>{{ site.xmpp-proxy-url }}</h2>
 <p id="date"><small>(expires: {{ site.fingerprint-proxy-expires }})</small></p>
+<p>The Socks 5 Proxy (<a href="https://xmpp.org/extensions/xep-0065.html">XEP-0065</a>) is the old method of transfering files between clients.  Modern clients use the "HTTP File Upload" service, on this service currently found at <b>{{ site.xmpp-upload-url }}</b>.
 {% if site.xmpp-proxy-url and site.xep-0065 == 1 and site.fingerprint-proxy-sha1 %}
   <div class="cert-title">
     <b>SHA1 Fingerprint</b>

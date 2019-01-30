@@ -8,7 +8,7 @@ permalink: /privacy-policy/
 
 The servers general policy regarding data is to save as much as needed and as little as possible.  This document will try to explain what personal data is store and how it is handled.
 
-## What is stored
+<h2 id="doc-section">What is stored</h2>
 
 ### Account data
 
@@ -34,7 +34,7 @@ The servers general policy regarding data is to save as much as needed and as li
 - Semi public data you are publishing for your contacts to see like your avatar or the OMEMO public keys.
 - Other private data your XMPP client might upload like a list of conference bookmarks.
 
-## How your data is handled
+<h2 id="doc-section">How you data is handled</h2>
 
 - If you delete your account all related information will be deleted with it. Including your files and messages.
 - All backups are encrypted.
