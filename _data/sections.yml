@@ -1,22 +1,22 @@
 - name: Archiving / Storage
   slug: history
-  glyph: fa fa-floppy-o
+  glyph: fas fa-save
   color: 9FCF6C
   col: 3
 
 - name: File Sharing
   slug: file
-  glyph: fa fa-cloud-download
+  glyph: fas fa-cloud-download-alt
   col: 3
 
 - name: Mobile
   slug: mobile
-  glyph: fa fa-mobile
+  glyph: fas fa-mobile-alt
   color: E66E20
   text: Optimized for mobile use, this server allows clients to use low power idle while waiting for messaages.
   col: 3
 
 - name: Security
   slug: security
-  glyph: fa fa-lock
+  glyph: fas fa-lock
   col: 2

@@ -49,6 +49,19 @@ fingerprint-proxy-sha256:
 fingerprint-upload-sha1:
 fingerprint-upload-sha256:
 
+xep-0163: 1
+xep-0237: 1
+xep-0280: 1
+xep-0191: 1
+xep-0045: 1
+xep-0198: 1
+xep-0313: 1
+xep-0352: 1
+xep-0363: 1
+xep-0065: 1
+xep-0357: 1
+xep-0375: 1
+
 # Analytics settings
 #google_analytics_id: UA-9532791-9
 
