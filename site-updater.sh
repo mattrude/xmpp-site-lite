@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR="/var/src/xmpp-site/sites/lite/"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 VERSION=`ejabberdctl status |tail -1 |awk '{ print $2 }'`
 GITVERSION=`git --git-dir=/var/src/ejabberd/.git log |head -1 |awk '{print $2}'`
 UPLOADDAYS=`grep -A1 mod_http_upload_quota /etc/ejabberd/ejabberd.yml |grep max_days |awk '{ print $2 }'`

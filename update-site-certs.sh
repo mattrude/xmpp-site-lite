@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd /var/src/xmpp-site/sites/lite/
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 CONFIG="current-config.yml"
 DOMAIN="$1"
+cd ${DIR}
 #for DOMAIN in mattrude.com soderparr.com therudes.com
 #do
     ###
