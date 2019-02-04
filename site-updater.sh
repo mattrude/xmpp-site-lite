@@ -23,6 +23,7 @@ do
     fi
     cd ${DIR} && \
         rm -rf /var/www/im.${DOMAIN} && \
+        if [ ! -f Gemfile.lock ]; then bundle install; fi && \
         bundle exec jekyll build -c current-config.yml -q
     chown -R www-data:www-data /var/www/im.${DOMAIN}
     rm -rf /var/www/im.${DOMAIN}/files ${DIR}/current-config.yml

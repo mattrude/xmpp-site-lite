@@ -2,14 +2,19 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 CONFIG="current-config.yml"
-DOMAIN="$1"
+if [ ${1} ]; then
+    DOMAIN="$1"
+else
+    echo "Domain name is required"
+    exit 1
+fi
 cd ${DIR}
 #for DOMAIN in mattrude.com soderparr.com therudes.com
 #do
     ###
     ### The Primary Cert Tests
     ###
-    DOMAINFL="im.${DOMAIN}"
+    #DOMAIN="im.${DOMAINS}"
     if [ -f /etc/ejabberd/certs/$DOMAIN/fullchain.pem ]; then
         if [ `openssl x509 -noout -text -in /etc/ejabberd/certs/${DOMAIN}/fullchain.pem |grep "DNS:$DOMAIN" |wc -l` -gt 0 ]; then
             EXPIRES=`openssl x509 -noout -text -in /etc/ejabberd/certs/${DOMAIN}/fullchain.pem |grep "Not After : " |sed 's/            Not After : /fingerprint-expires: "/g' |sed 's/$/"/g'`
@@ -21,6 +26,7 @@ cd ${DIR}
             SHA256='fingerprint-sha256: "No Key Found"'
         fi
     else
+        ls /etc/ejabberd/certs/${DOMAIN}/fullchain.pem
         if [ -f /etc/ejabberd/certs/${DOMAIN}/fullchain.pem ]; then
             if [ `openssl x509 -noout -text -in /etc/ejabberd/certs/${DOMAIN}/fullchain.pem |grep "DNS:$DOMAIN" |wc -l` -gt 0 ]; then
                 EXPIRES=`openssl x509 -noout -text -in /etc/ejabberd/certs/${DOMAIN}/fullchain.pem |grep "Not After : " |sed 's/            Not After : /fingerprint-expires: "/g' |sed 's/$/"/g'`
@@ -33,7 +39,7 @@ cd ${DIR}
             fi
         fi
     fi
-    sed -i "/fingerprint-expires/c$EXPIRES" ${CONFIG}
+    sed -i "/fingerprint-expires/c${EXPIRES}" ${CONFIG}
     sed -i "/fingerprint-sha1/c$SHA1" ${CONFIG}
     sed -i "/fingerprint-sha256/c$SHA256" ${CONFIG}
 
