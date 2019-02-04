@@ -21,7 +21,10 @@ xmpp-conference-url: "conference.example.com" # Multi-User Chat xep-0045
 xmpp-proxy-url: "proxy.example.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
 xmpp-upload-url: "upload.example.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
 
+###########################################################################
+# Enable/Disable diffrent section on the website
 server-features: 1
+register-web: 2
 user-guide: 0
 
 ###########################################################################
