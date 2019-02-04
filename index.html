@@ -144,10 +144,11 @@ permalink: /
                            {% if feature.section == section.slug %}
                            <div class="{% if section.col == 3 %}col-md-4{% else %}col-sm-6{% endif %}" style="min-height:280px;">
                                <h3>{{ feature.name }}</h3>
-                                   <p>{{ feature.text }}</p>
+                               <p>{{ feature.text }}</p>
                            </div>
                            {% endif %}
                            {% endfor %}
+                           <p>{{ section.sub }}</p>
                        </div>
                    </div>
                </div>

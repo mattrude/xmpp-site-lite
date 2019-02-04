@@ -19,4 +19,5 @@
 - name: Security
   slug: security
   glyph: fas fa-lock
+  sub: This server keeps minimal logs of users connections.  Error logs are kept for 48 hours.
   col: 2
