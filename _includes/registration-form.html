@@ -35,6 +35,7 @@
                                         <div class="invalid-feedback" style="width: 100%;">Your email address is required.</div>
                                     </div>
                                 </div>
+                                {% if site.recaptcha_public_key != "" %}
                                 <div style="margin-bottom:25px;margin:0 auto;min-height:78px;" class="input-group test">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div class="g-recaptcha" data-sitekey="{{ site.recaptcha_public_key }}" style="transform:scale(0.88);-webkit-transform:scale(0.88);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
@@ -59,9 +60,10 @@
       </div>
     </noscript>
                                 </div>
+                                {% endif %}
                                 <div style="margin-top:15px;margin-bottom:0;" class="form-group">
                                     <div class="col-sm-12 controls">
-                                        <input type="submit" value="Register" class="btn btn-success pull-right" />
+                                        <input name="rgister" type="submit" value="Register" class="btn btn-success pull-right" />
                                         <input type="reset" value="Clear" class="btn btn-default pull-right" style="margin-right:15px" />
                                     </div>
                                 </div>

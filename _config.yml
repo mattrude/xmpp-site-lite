@@ -9,8 +9,9 @@ baseurl: "im.example.com"
 destination: "/var/www/im.example.com"
 
 owner-name: "Matt Rude"
-owner-pgpkey: "0xc4909ee495b0761f"
+owner-pgpkey: "0x94c32ac158aea35c"
 owner-url: "https://mattrude.com/"
+owner-email: "matt@mattrude.com"
 owner-xmpp: "matt@mattrude.com"
 owner-twitter: "mdrude"
 owner-github: "mattrude"
@@ -24,7 +25,7 @@ xmpp-upload-url: "upload.example.com" # XEP-0065: SOCKS5 Bytestreams (Proxy)
 ###########################################################################
 # Enable/Disable diffrent section on the website
 server-features: 1
-register-web: 2
+register-web: 0
 user-guide: 0
 
 ###########################################################################
