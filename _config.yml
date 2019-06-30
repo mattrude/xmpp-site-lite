@@ -7,6 +7,7 @@ url: "https://im.example.com"
 name: "example.com"
 baseurl: "im.example.com"
 destination: "/var/www/im.example.com"
+system-version: "16.04 LTS"
 
 owner-name: "Matt Rude"
 owner-pgpkey: "0x94c32ac158aea35c"
@@ -77,6 +78,7 @@ date: YYYY-MM-DD HH:MM
 
 include:
 - .well-known/host-meta
+- .well-known/host-meta.json
 
 exclude:
 - README.md

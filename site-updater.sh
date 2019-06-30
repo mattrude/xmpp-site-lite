@@ -3,6 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 VERSION=`ejabberdctl status |tail -1 |awk '{ print $2 }'`
 GITVERSION=`git --git-dir=/var/src/ejabberd/.git log |head -1 |awk '{print $2}'`
+SYSVERSION=`lsb_release -a 2> /dev/null |grep 'Release:' |awk '{ print $2 }'`
 UPLOADDAYS=`grep -A1 mod_http_upload_quota /etc/ejabberd/ejabberd.yml |grep max_days |awk '{ print $2 }'`
 UPLOADFSIZ=`grep -A8 "mod_http_upload:$" /etc/ejabberd/ejabberd.yml |grep max_size |awk '{ print $2 }' |awk '{ byte =$1 /1024/1024/1024; print byte " GB" }'`
 DOMAINS=`sed -n -e '/^hosts:/,/^##/ p' /etc/ejabberd/ejabberd.yml |grep "^  -" |awk '{ print $2 }' |sed 's/"//g'`
@@ -16,6 +17,7 @@ do
     sed -i "s/^ejabberd-gitversion.*/ejabberd-gitversion: \"${GITVERSION}\"/g" current-config.yml
     sed -i "s/^ejabberd-upload-days.*/ejabberd-upload-days: \"${UPLOADDAYS}\"/g" current-config.yml
     sed -i "s/^ejabberd-upload-fsize.*/ejabberd-upload-fsize: \"${UPLOADFSIZ}\"/g" current-config.yml
+    sed -i "s/^system-version.*/system-version: \"${SYSVERSION}\"/g" current-config.yml
     if [ -x ${DIR}/update-site-certs.sh ]; then
         ${DIR}/update-site-certs.sh ${DOMAIN}
     else
@@ -25,6 +27,7 @@ do
         rm -rf /var/www/im.${DOMAIN} && \
         if [ ! -f Gemfile.lock ]; then bundle install; fi && \
         bundle exec jekyll build -c current-config.yml -q
+    mv /var/www/im.${DOMAIN}/well-known /var/www/im.${DOMAIN}/.well-known
     chown -R www-data:www-data /var/www/im.${DOMAIN}
     rm -rf /var/www/im.${DOMAIN}/files ${DIR}/current-config.yml
 done

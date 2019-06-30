@@ -1,6 +1,6 @@
     <div id="feature-about" style="">
         <div class="container offsetanchor">
-                <div class="section-headder"><center><span class="fas fa-info-circle" style="font-size:80px;" aria-hidden="true"></span><h1>About</h1></center></div>
+                <div class="section-header"><center><span class="fas fa-info-circle" style="font-size:80px;" aria-hidden="true"></span><h1>About</h1></center></div>
                 <div class="col-md-5 float-right">
                     <h2>Contact Information</h2>
 		    <p>{% if site.owner-name %}This site is maintained by Matt Rude{% if site.owner-pgpkey %} (<a href="https://mattrude.com/keys/{{ site.owner-pgpkey }}.asc" target="_blank">{{ site.owner-pgpkey }}</a>){% endif %}. {% endif %}If you would like to report any problems or bugs, please send a email or XMPP messsage to the email address listed in one of my public keys.</p>
@@ -12,7 +12,7 @@
                         {% if site.owner-url %}<li class="list-inline"><b><a href=" {{ site.owner-url }}" title="Website" target="_blank"><i class="fas fa-link"></i></a></b></li>{% endif %}
                         {% if site.owner-pgpkey %}<li class="list-inline"><b><a href="https://mattrude.com/keys/{{ site.owner-pgpkey }}.asc" title="PGP Public Key" target="_blank"><i class="fas fa-key"></i></a></b></li>{% endif %}
                     </ul>
-                    <p><small>Pleasee see my <a href="https://mattrude.com/contact.txt">contact.txt</a> file for my current <a href="https://conversations.im/omemo/">omemo</a> keys.</small></p>
+                    <p><small>See my <a href="https://mattrude.com/contact.txt" target="_blank">contact.txt</a> file for my <a href="https://conversations.im/omemo/" target="_blank">omemo</a> keys.</small></p>
                     <hr />
                     <p style="text-align:center;">
                         <!-- IPv6-test.com button BEGIN -->
@@ -24,7 +24,7 @@
                     <h2 id="this-service">This Service</h2>
                     <p>This service is running a clustered configuration, of two servers, running <a href="https://www.ejabberd.im/" target="_blank">ejabberd</a>
                         version <a href="https://github.com/processone/ejabberd/commits/{{ site.ejabberd-gitversion }}" target="_blank">{{ site.ejabberd-version }}</a> on 
-                        <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> version 18.04 LTS.
+                        <a href="http://www.ubuntu.com/" target="_blank">Ubuntu</a> version {{ site.system-version }}.
                         The source code for ejabberd may be found on github in the
                         <a href="https://github.com/processone/ejabberd" target="_blank">processone/ejabberd</a> repository.
                         The program ejabberd is licensed under the
