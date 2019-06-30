@@ -1,0 +1,16 @@
+---
+path: /.well-known/host-meta.json
+---
+
+{
+  "links": [
+    {
+      "rel": "urn:xmpp:alt-connections:xbosh",
+      "href": "{{ site.url }}:5280/bosh"
+    },
+    {
+      "rel": "urn:xmpp:alt-connections:websocket",
+      "href": "wss://{{ site.baseurl }}:443/ws"
+    }
+  ]
+}
