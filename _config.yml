@@ -10,7 +10,7 @@ destination: "/var/www/im.example.com"
 system-version: "16.04 LTS"
 
 owner-name: "Matt Rude"
-owner-pgpkey: "0x94c32ac158aea35c"
+owner-pgpkey: "0x7fd07a5124cd67c8"
 owner-url: "https://mattrude.com/"
 owner-email: "matt@mattrude.com"
 owner-xmpp: "matt@mattrude.com"
