@@ -1,6 +1,6 @@
 # Communication Service Website Source
 
-[![Build Status](https://travis-ci.org/mattrude/xmpp-site-lite.svg?branch=master)](https://travis-ci.org/mattrude/xmpp-site-lite) [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)](http://github.com/mattrude/xmpp-site-lite)
+[![Build Status](https://travis-ci.org/mattrude/xmpp-site-lite.svg?branch=master)](https://travis-ci.org/mattrude/xmpp-site-lite) [![GitHub license](https://img.shields.io/github/license/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/blob/master/LICENSE) [![Open Issues](https://img.shields.io/github/issues-raw/mattrude/xmpp-site-lite.svg)](https://github.com/mattrude/xmpp-site-lite/issues) [![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)](http://github.com/mattrude/xmpp-site-lite)
 
 This is the website for the XMPP service at [soderparr.com](https://im.soderparr.com).
 
